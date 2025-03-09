@@ -3,7 +3,7 @@ import ApplicationLogo from "./ApplicationLogo";
 import NavLink from "./NavLink";
 import PrimaryButton from "./PrimaryButton";
 import SecondaryButton from "./SecondaryButton";
-
+import Dropdown from '@/Components/Dropdown';
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -24,9 +24,48 @@ export default function Header() {
                         <NavLink href="/about-us" className="hover:text-blue-600">
                             About Us
                         </NavLink>
-                        <a href="/#programs" className="inline-flex items-center  px-1 pt-1 font-semibold leading-5 transition duration-150 ease-in-out focus:outline-none">
-                            Courses
-                        </a>
+                        {/* <a href="/#programs" className="inline-flex items-center  px-1 pt-1 font-semibold leading-5 transition duration-150 ease-in-out focus:outline-none"> */}
+                        <Dropdown>
+                            <Dropdown.Trigger>
+                                <span className="inline-flex rounded-md">
+                                    <button
+                                        type="button"
+                                        className="inline-flex items-center  px-1 pt-1 font-semibold leading-5 transition duration-150 ease-in-out focus:outline-none"
+                                    >
+                                        Courses
+
+                                        <svg
+                                            className="-me-0.5 ms-2 h-4 w-4"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                    </button>
+                                </span>
+                            </Dropdown.Trigger>
+
+                            <Dropdown.Content align="left" contentClasses="mt-2 bg-white">
+                                <Dropdown.Link
+                                    className="font-bold py-3"
+                                    href={route('ai-basic')}
+                                >
+                                    AI Basic
+                                </Dropdown.Link>
+                                <Dropdown.Link
+                                    className="font-bold py-3"
+                                    href={route('ai-inter')}
+                                >
+                                    AI Intermediate
+                                </Dropdown.Link>
+                            </Dropdown.Content>
+                        </Dropdown>
+                        {/* </a> */}
                         <NavLink href="/blogs" className="hover:text-blue-600">
                             Blogs
                         </NavLink>

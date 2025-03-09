@@ -19,10 +19,10 @@ Route::get('/about-us', function () {
 });
 Route::get('/ai-course', function () {
     return Inertia::render('AiCourseLandingPage');
-});
+})->name('ai-inter');
 Route::get('/ai-basic', function () {
     return Inertia::render('AiCourseLandingPageBasic');
-});
+})->name('ai-basic');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

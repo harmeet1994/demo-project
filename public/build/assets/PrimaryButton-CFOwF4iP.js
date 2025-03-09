@@ -1,0 +1,1 @@
+import{j as r}from"./app-BUOQuv59.js";function s({className:n="",disabled:t,children:o,...e}){return r.jsx("button",{...e,className:`inline-flex items-center rounded-lg border border-transparent bg-[#E88700] px-6 py-2.5 font-semibold text-white transition duration-150 ease-in-out  focus:outline-none focus:ring-offset-2${t&&"opacity-25"} `+n,disabled:t,children:o})}export{s as P};

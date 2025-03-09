@@ -10,7 +10,11 @@ import Tabs from '@mui/joy/Tabs';
 import TabList from '@mui/joy/TabList';
 import Tab from '@mui/joy/Tab';
 import TabPanel from '@mui/joy/TabPanel';
-import LayeredScrollEffect from '@/Components/LayeredScrollEffect';
+import AccordionGroup from '@mui/joy/AccordionGroup';
+import Accordion, { accordionClasses } from '@mui/joy/Accordion';
+import AccordionDetails from '@mui/joy/AccordionDetails';
+import AccordionSummary from '@mui/joy/AccordionSummary';
+
 
 function AiCourseLandingPageBasic() {
     var settings = {
@@ -979,6 +983,57 @@ function AiCourseLandingPageBasic() {
                         </Slider>
                     </div>
 
+                </div>
+            </section>
+            <section className='py-12 bg-gray-50'>
+                <div className="container mx-auto px-4 w-10/12">
+                    <h2 className="text-4xl font-bold mb-8">
+                        Frequently Asked Questions (FAQs)
+                    </h2>
+                    <AccordionGroup className="space-y-4" sx={{
+                        // Target each Accordion inside the group
+                        [`& .${accordionClasses.root}`]: {
+                            border: 'none',
+                            boxShadow: 'none',
+                            // Remove bottom border for all but the last Accordion
+                            '&:not(:last-of-type)': {
+                                borderBottom: 'none',
+                            },
+                        },
+                    }}>
+                        <Accordion >
+                            <AccordionSummary>What is the duration of the course?</AccordionSummary>
+                            <AccordionDetails >
+                                <div className='bg-[#FFE4BD] ml-8 rounded p-3 my-2'>
+                                    <p>The course is a 3-month program with two live interactive classes per week.</p>
+                                </div>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion >
+                            <AccordionSummary>Do I need prior programming experience?</AccordionSummary>
+                            <AccordionDetails >
+                                <div className='bg-[#FFE4BD] ml-8 rounded p-3 my-2'>
+                                    <p>The course is a 3-month program with two live interactive classes per week.</p>
+                                </div>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion >
+                            <AccordionSummary>What will I receive upon course completion?</AccordionSummary>
+                            <AccordionDetails >
+                                <div className='bg-[#FFE4BD] ml-8 rounded p-3 my-2'>
+                                    <p>The course is a 3-month program with two live interactive classes per week.</p>
+                                </div>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion >
+                            <AccordionSummary>Are the classes live or recorded?</AccordionSummary>
+                            <AccordionDetails >
+                                <div className='bg-[#FFE4BD] ml-8 rounded p-3 my-2'>
+                                    <p>The course is a 3-month program with two live interactive classes per week.</p>
+                                </div>
+                            </AccordionDetails>
+                        </Accordion>
+                    </AccordionGroup>
                 </div>
             </section>
         </GuestLayout>
