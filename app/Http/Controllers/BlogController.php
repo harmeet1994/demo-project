@@ -16,4 +16,14 @@ class BlogController extends Controller
 
         return response()->json(['data' => $blogs]);
     }
+
+    public function getBlogsFull(Request $request)
+    {
+        $blogs = DB::table('wp_blogs')
+            ->selectRaw("wp_blogs.*,DATE_FORMAT(Blog_publish_date,'%M %d, %Y') as publish_date")
+            ->orderByDesc('id')
+            ->paginate(5);
+
+        return response()->json(['data' => $blogs]);
+    }
 }

@@ -23,6 +23,12 @@ Route::get('/ai-course', function () {
 Route::get('/ai-basic', function () {
     return Inertia::render('AiCourseLandingPageBasic');
 })->name('ai-basic');
+Route::get('/language', function () {
+    return Inertia::render('LanguageCourse');
+})->name('language');
+Route::get('/blogs', function () {
+    return Inertia::render('Blogs');
+})->name('blogs');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

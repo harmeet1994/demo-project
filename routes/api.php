@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/get-blogs', [BlogController::class, 'getBlogs']);
+Route::get('/get-blogs-list', [BlogController::class, 'getBlogsFull']);
