@@ -115,7 +115,7 @@ function LanguageCourse() {
 
                     <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:mb-16">
 
-                        <div class="w-full md:w-1/2 hidden">
+                        <div class="w-full md:w-1/2 hidden md:block">
                             <div class="relative">
 
                                 <div class="flex justify-center">
