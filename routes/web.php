@@ -26,6 +26,9 @@ Route::get('/ai-basic', function () {
 Route::get('/language', function () {
     return Inertia::render('LanguageCourse');
 })->name('language');
+Route::get('/operations', function () {
+    return Inertia::render('OperationsCourse');
+})->name('operations');
 Route::get('/blogs', function () {
     return Inertia::render('Blogs');
 })->name('blogs');
