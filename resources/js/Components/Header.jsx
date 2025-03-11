@@ -63,6 +63,18 @@ export default function Header() {
                                 >
                                     AI Intermediate
                                 </Dropdown.Link>
+                                <Dropdown.Link
+                                    className="font-bold py-3"
+                                    href={route('language')}
+                                >
+                                    Language Course
+                                </Dropdown.Link>
+                                <Dropdown.Link
+                                    className="font-bold py-3"
+                                    href={route('operations')}
+                                >
+                                    Unati
+                                </Dropdown.Link>
                             </Dropdown.Content>
                         </Dropdown>
                         {/* </a> */}

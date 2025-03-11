@@ -47,7 +47,7 @@ const Blogs = () => {
             <Loader show={loading} />
             <div className="w-full">
                 {/* Hero Banner */}
-                <div className="w-full pt-20 pb-0 px-5">
+                <div className="w-full pt-4 pb-0 px-5">
                     <div className="w-full p-0">
                         <img src="/assets/img/blogs.png" className="w-full" alt="Blogs Banner" />
                     </div>

@@ -141,7 +141,7 @@ function AiCourseLandingPageBasic() {
                 <div className="relative z-10 flex flex-col md:flex-row items-end justify-end">
                     <div className="w-full md:w-1/2">
                         <img
-                            src="/assets/img/ai/ai_banner.svg"
+                            src="/assets/img/ai/ai_banner.png"
                             alt="AI/ML Professional"
                             className="w-full rounded-lg shadow-lg"
                         />
@@ -845,11 +845,11 @@ function AiCourseLandingPageBasic() {
 
             {/* Instructors Section */}
             <section className="py-12 bg-white">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-4 md:w-2/3">
                     <h2 className=" ">Learn From The Best</h2>
                     <h3 className="text-4xl font-bold mb-8">Meet Your Instructors</h3>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 h-[90vh] md:h-80 gap-6 w-full">
+                    <div className="grid md:grid-cols-2 h-[90vh] md:h-80 gap-6 w-full">
                         <div className="bg-white flex items-end rounded-lg shadow overflow-hidden !bg-cover" style={{ background: "url('/assets/img/ai/chetan.png')" }}>
 
                             <div className="p-2 px-4 rounded-tr-lg bg-white w-full md:w-fit">
