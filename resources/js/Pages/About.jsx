@@ -7,8 +7,8 @@ function About() {
     return (
         <GuestLayout>
             <div class=" mx-auto px-5 pt-3">
-                <div class="w-full">
-                    <img src="../assets/img/about-us/about.png" class="w-full" alt="" />
+                <div class="w-full ">
+                    <img src="../assets/img/about-us/about.png" class="w-full rounded-3xl" alt="" />
                 </div>
             </div>
 

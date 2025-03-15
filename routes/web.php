@@ -12,13 +12,22 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('home');
 
 Route::get('/about-us', function () {
     return Inertia::render('About');
 });
+Route::get('/jobs', function () {
+    return Inertia::render('Jobs');
+});
+Route::get('/job-details/{id}', function ($id) {
+    return Inertia::render('JobDetails',["id"=>$id]);
+});
+Route::get('/contact-us', function () {
+    return Inertia::render('ContactUs');
+});
 Route::get('/ai-course', function () {
-    return Inertia::render('AiCourseLandingPage');
+    return Inertia::render('Ai');
 })->name('ai-inter');
 Route::get('/ai-basic', function () {
     return Inertia::render('AiCourseLandingPageBasic');

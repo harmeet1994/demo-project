@@ -1,14 +1,39 @@
 import Header from '@/Components/Header';
 import PrimaryButton from '@/Components/PrimaryButton';
 import { Head } from '@inertiajs/react';
+import { router } from '@inertiajs/react'
+import React, { useState, useEffect } from 'react'
+import { Puff, ThreeCircles } from 'react-loader-spinner';
 
 export default function GuestLayout({ children }) {
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        const handleStart = () => setLoading(true)
+        const handleFinish = () => setLoading(false)
+
+        router.on('start', handleStart)
+        router.on('finish', handleFinish)
+
+        return () => {
+
+            router.on('start', handleStart)
+            router.on('finish', handleFinish)
+        }
+    }, [])
+
     return (
         <div className='bg-white'>
             <Head>
                 <title>Job School</title>
                 <meta name="description" content="Your page description" />
             </Head>
+            {loading && (
+                <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
+                    <ThreeCircles visible={true} color='#E88700' />
+
+                </div>
+            )}
             <Header />
             <main className='min-h-screen mt-20 bg-white'>
                 {children}
