@@ -12,11 +12,12 @@ Route::get('/user', function (Request $request) {
 Route::get('/get-blogs', [BlogController::class, 'getBlogs']);
 Route::get('/get-blogs-list', [BlogController::class, 'getBlogsFull']);
 
+Route::get('/get-job-postings', [JobController::class, 'index']);
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/bookmark-job', [JobController::class, 'saveJob']);
     Route::post('/save-job', [JobController::class, 'saveJobForm']);
-    Route::get('/get-job-postings', [JobController::class, 'index']);
+    
     Route::get('/get-job-details', [JobController::class, 'jobDetails']);
     
 });
