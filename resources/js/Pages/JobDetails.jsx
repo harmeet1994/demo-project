@@ -8,7 +8,7 @@ import JobApplicationModal from '@/Components/JobApplicationModel';
 
 function JobDetails({ id }) {
     const [loading, setLoading] = useState(false)
-    const [modal, setModal] = useState(true)
+    const [modal, setModal] = useState(false)
     const [job, setjob] = useState(null)
     const getDetails = async () => {
         setLoading(true)
