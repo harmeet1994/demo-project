@@ -6,11 +6,16 @@ import axios from 'axios';
 import Loader from '@/Components/Loader';
 import { Snackbar } from '@mui/joy';
 import { usePage } from '@inertiajs/react';
+import { Pagination } from '@mui/material';
 
 
 function Jobs() {
     const [activeTab, setActiveTab] = useState('All Posts');
-
+    const [title, setTitle] = useState("")
+    const [page, setPage] = useState(1)
+    const [lastPage, setLastPage] = useState(1)
+    const [category, setCategory] = useState("")
+    const [location, setLocation] = useState("")
     const tabs = ['All Posts', 'Recent Post', 'Active', 'Saved', 'Applied'];
 
     const [total, setTotal] = useState(0)
@@ -43,15 +48,23 @@ function Jobs() {
     const [jobPostings, setJobPostings] = useState([]);
     const getJobs = async () => {
         setLoading(true)
-        const res = await axios.get(`/api/get-job-postings`);
+        const res = await axios.get(`/api/get-job-postings?page=${page}&search=${title}&category=${category}&location=${location}&post_filter=${activeTab}`);
         setJobPostings(res.data.data);
         setTotal(res.data.total)
+        setLastPage(res.data.last_page)
         setLoading(false)
     }
 
     useEffect(() => {
         getJobs()
-    }, [])
+    }, [activeTab, page])
+
+    const searchJobs = () => {
+        if (title !== "" || category !== "" || location !== "") {
+            getJobs()
+        }
+    }
+
     const user = usePage().props.auth.user;
     const saveJob = (id) => {
         if (!user) {
@@ -106,7 +119,9 @@ function Jobs() {
                         <div className="flex items-center flex-1 bg-transparent pl-4 py-2">
                             <Search className="text-gray-500 mr-2" size={20} />
                             <input
+                                onChange={(e) => setTitle(e.target.value)}
                                 type="text"
+                                value={title}
                                 placeholder="Job Title Or Keyword"
                                 className="bg-transparent w-full focus:outline-none text-white"
                             />
@@ -116,7 +131,7 @@ function Jobs() {
 
                         <div className="flex items-center flex-1 bg-transparent px-4 py-2">
                             <Briefcase className="text-gray-500 mr-2" size={20} />
-                            <select className="bg-transparent w-full focus:outline-none text-white appearance-none cursor-pointer">
+                            <select value={category} onChange={(e) => setCategory(e.target.value)} className="bg-transparent w-full focus:outline-none text-white appearance-none cursor-pointer">
                                 <option value="">Sector</option>
                                 <option value="technology">Technology</option>
                                 <option value="healthcare">Healthcare</option>
@@ -130,33 +145,36 @@ function Jobs() {
                         <div className="flex items-center flex-1 bg-transparent px-4 py-2">
                             <MapPin className="text-gray-500 mr-2" size={20} />
                             <input
+                                value={location}
+                                onChange={(e) => setLocation(e.target.value)}
                                 type="text"
                                 placeholder="Location"
                                 className="bg-transparent w-full focus:outline-none text-white"
                             />
                         </div>
 
-                        <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full transition-colors">
+                        <button onClick={() => searchJobs()} className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full transition-colors">
                             Search Job
                         </button>
+                        {(location !== "" || title !== "" || category !== "") && <a onClick={() => { window.location.reload() }} className='text-blue-400 cursor-pointer'>Clear All</a>}
                     </div>
 
                 </div>
             </section>
             <section className='py-12'>
                 <div className="container mx-auto px-4 py-6 bg-gray-50">
-                    <div className="flex justify-between items-center mb-4">
-                        <div>
+                    <div className="flex items-end mb-4 space-x-6">
+                        <div className='w-24'>
                             <h1 className="text-2xl font-bold">{total}</h1>
                             <p className="text-gray-600">Jobs Found</p>
                         </div>
 
-                        <div className="flex space-x-2">
-                            <div className="flex">
+                        <div className="flex space-x-2 justify-between w-full">
+                            <div className="flex gap-4">
                                 {tabs.map(tab => (
                                     <button
                                         key={tab}
-                                        className={`px-4 py-2 text-sm font-medium rounded-md ${activeTab === tab ? 'bg-black text-white' : 'bg-white text-gray-800 border'}`}
+                                        className={`px-4 py-2 text-sm font-semibold uppercase  rounded-md ${activeTab === tab ? 'bg-black text-white' : 'bg-white text-gray-800 border'}`}
                                         onClick={() => setActiveTab(tab)}
                                     >
                                         {tab}
@@ -164,15 +182,15 @@ function Jobs() {
                                 ))}
                             </div>
 
-                            <button className="p-2 bg-white border rounded-md">
+                            {/* <button className="p-2 bg-white border rounded-md">
                                 <Filter size={20} />
-                            </button>
+                            </button> */}
                         </div>
                     </div>
 
                     <div className="border-t border-gray-200 pt-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {jobPostings.map(job => (
+                            {jobPostings !== undefined && jobPostings.length > 0 && jobPostings.map(job => (
                                 <div className="hover:bg-gradient-to-r p-[4px]  rounded-lg hover:from-[#6EE7B7] hover:via-[#3B82F6] hover:to-[#9333EA] transition-all duration-300 ease-in-out">
                                     <div key={job.id} className="bg-white rounded border p-4 relative ">
                                         <div className="flex justify-between items-start">
@@ -196,8 +214,8 @@ function Jobs() {
                                                 {job.status}
                                             </span>
                                             {
-                                                job.tags !== null && JSON.parse(job.tags).length > 0 && JSON.parse(job.tags).map((tag) => (
-                                                    <span className="px-3 py-1 bg-gray-100 rounded-md text-sm">
+                                                job.tags !== null && JSON.parse(job.tags).length > 0 && JSON.parse(job.tags).map((tag, key) => (
+                                                    <span key={key} className="px-3 py-1 bg-gray-100 rounded-md text-sm">
                                                         {tag}
                                                     </span>
                                                 ))
@@ -228,28 +246,8 @@ function Jobs() {
                         </div>
                     </div>
 
-                    <div className="mt-8 flex justify-center hidden">
-                        <div className="flex items-center space-x-2">
-                            <button className="p-2 rounded-full border">
-                                <ChevronLeft size={16} />
-                            </button>
-                            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-orange-500 text-white">
-                                1
-                            </button>
-                            <button className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100">
-                                2
-                            </button>
-                            <button className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100">
-                                3
-                            </button>
-                            <span className="px-2">...</span>
-                            <button className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100">
-                                7
-                            </button>
-                            <button className="p-2 rounded-full border">
-                                <ChevronRight size={16} />
-                            </button>
-                        </div>
+                    <div className="mt-8 flex justify-center">
+                        <Pagination count={lastPage} onChange={(e, pageNumber) => setPage(pageNumber)} />
                     </div>
                 </div>
             </section>

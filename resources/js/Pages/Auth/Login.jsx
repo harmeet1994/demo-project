@@ -36,13 +36,13 @@ export default function Login({ status, canResetPassword }) {
             )}
 
             <div className='flex min-h-[90vh] px-4 items-center'>
-                <div className='w-1/2'>
+                <div className='w-1/2 hidden md:block'>
                     <img src={loginbg} alt="" className='object-cover h-[80vh] rounded-lg' />
                 </div>
-                <div className="w-1/2">
-                    <div className="w-2/3 mx-auto space-y-4">
+                <div className="md:w-1/2">
+                    <div className="md:w-2/3 mx-auto space-y-4">
                         <div className="space-y-4">
-                            <h1 className="text-5xl font-bold tracking-tight">Join us today <span className="inline-block animate-pulse">👋</span></h1>
+                            <h1 className="text-5xl font-bold tracking-tight">Login<span className="inline-block animate-pulse">👋</span></h1>
                             <p className="text-xl text-gray-700">
                                 Over 20,000+ students placed in more than 200 top companies
                             </p>
@@ -109,7 +109,9 @@ export default function Login({ status, canResetPassword }) {
                                 <PrimaryButton className="bg-[#2563EB] px-12" disabled={processing}>
                                     Log in
                                 </PrimaryButton>
+
                             </div>
+                            <p>Don't have an account? <a href="/register" className='text-blue-500'>Create free account</a></p>
                         </form>
                     </div>
                 </div>

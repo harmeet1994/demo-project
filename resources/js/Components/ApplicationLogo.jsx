@@ -1,7 +1,7 @@
 export default function ApplicationLogo(props) {
     return (
         <svg width="164" height="56" viewBox="0 0 164 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_89_2047)">
+            <g clipPath="url(#clip0_89_2047)">
                 <path d="M16.882 16.9265L21.2893 20.2671V38.4645L10 29.8928V22.462L12.7065 25.1162V28.075L18.5039 32.0925V22.1623L17.1137 21.0987L16.882 16.9265Z" fill="black" />
                 <path d="M10.3105 31.2609V35.4283L21.7527 44L33.5053 35.0512V31.0337L21.7527 39.8278L10.3105 31.2609Z" fill="black" />
                 <path d="M33.5056 12V15.7903L24.9228 22.462V24.9663L33.2739 19.0536V30.0474L22.3691 38.3097V34.2148L30.952 27.7704V24.7391L22.3691 30.9563V20.3396L33.5056 12Z" fill="black" />

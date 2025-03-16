@@ -245,3 +245,10 @@ body {
 .jobDetails h2 {
     @apply font-bold
 }
+
+.header-accordian .MuiAccordionSummary-button {
+    border: none !important;
+    @apply !shadow-none !p-1 !my-0 font-bold text-black;
+
+
+}

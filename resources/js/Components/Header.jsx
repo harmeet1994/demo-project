@@ -3,10 +3,10 @@ import ApplicationLogo from "./ApplicationLogo";
 import NavLink from "./NavLink";
 import PrimaryButton from "./PrimaryButton";
 import SecondaryButton from "./SecondaryButton";
-import Dropdown from '@/Components/Dropdown';
 import { usePage } from "@inertiajs/react";
 import DropdownBig from "./DropdownBig";
 import CourseHeaderCard from "./CourseHeaderCard";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/joy";
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const user = usePage().props.auth.user;
@@ -137,7 +137,7 @@ export default function Header() {
                 {
                     user === null && <div className="hidden md:flex items-center space-x-4">
                         <SecondaryButton onClick={() => { window.location.href = '/login' }}>Login</SecondaryButton>
-                        <PrimaryButton>Get Started</PrimaryButton>
+                        <PrimaryButton onClick={() => { window.location.href = "/register"; }}>Get Started</PrimaryButton>
                     </div>}
 
                 {
@@ -165,21 +165,35 @@ export default function Header() {
                     <NavLink href="/about-us" className="hover:text-blue-600">
                         About Us
                     </NavLink>
-                    <NavLink href="#programs" className="hover:text-blue-600">
-                        Courses
-                    </NavLink>
+                    <Accordion className="w-full header-accordian">
+                        <AccordionSummary>Courses</AccordionSummary>
+                        <AccordionDetails>
+                            <div className='flex flex-col space-y-4 pl-5 py-4'>
+                                <NavLink href="/operations" className="hover:text-blue-600">
+                                    Sales & Operational Roles
+                                </NavLink>
+                                <NavLink href="/language" className="hover:text-blue-600">
+                                    Language
+                                </NavLink>
+                                <NavLink href="/ai-course" className="hover:text-blue-600">
+                                    Tech Courses
+                                </NavLink>
+                            </div>
+                        </AccordionDetails>
+                    </Accordion>
                     <NavLink href="/blogs" className="hover:text-blue-600">
                         Blogs
                     </NavLink>
-                    <NavLink href="/job-postings" className="hover:text-blue-600">
+                    <NavLink href="/jobs" className="hover:text-blue-600">
                         Jobs
                     </NavLink>
                     <NavLink href="/contact-us" className="hover:text-blue-600">
                         Contact
                     </NavLink>
-                    <NavLink href="/contact-us" className="hover:text-blue-600">
+                    <NavLink href="/login" className="hover:text-blue-600">
                         Login
                     </NavLink>
+
 
                 </nav>
             </div>
