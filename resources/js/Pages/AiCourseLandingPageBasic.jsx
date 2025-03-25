@@ -2,7 +2,7 @@ import PrimaryButton from '@/Components/PrimaryButton'
 import SecondaryButton from '@/Components/SecondaryButton'
 import GuestLayout from '@/Layouts/GuestLayout'
 import React from 'react'
-import { Clock, Calendar, BookOpen, Euro, Users, Code } from 'lucide-react';
+import { Clock, Calendar, BookOpen, Euro, Users, Code, IndianRupee } from 'lucide-react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -172,9 +172,9 @@ function AiCourseLandingPageBasic() {
                             <p className="font-bold">24</p>
                         </div>
                         <div className="flex flex-col items-center p-3  hover:bg-gray-50">
-                            <Euro className="w-5 h-5 text-gray-500 mb-1" />
+                            <IndianRupee className="w-5 h-5 text-gray-500 mb-1" />
                             <p className="text-sm text-gray-500">Course Fee:</p>
-                            <p className="font-bold">€12,500</p>
+                            <p className="font-medium">₹12,500</p>
                         </div>
                         <div className="flex flex-col items-center p-3  hover:bg-gray-50">
                             <Users className="w-5 h-5 text-gray-500 mb-1" />
