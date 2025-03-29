@@ -17,6 +17,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId, job }) => {
     const [files, setFiles] = useState([])
     const { Dragger } = Upload;
     const props = {
+        accept: '.pdf, .doc, .docx',
         multiple: false,
         maxCount: 1,
         name: 'file',
