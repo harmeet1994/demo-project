@@ -4,9 +4,11 @@ import { ArrowLeft, BookmarkIcon } from 'lucide-react';
 import axios from 'axios';
 import Loader from '@/Components/Loader';
 import JobApplicationModal from '@/Components/JobApplicationModel';
+import { usePage } from '@inertiajs/react';
 
 
 function JobDetails({ id }) {
+
     const [loading, setLoading] = useState(false)
     const [modal, setModal] = useState(false)
     const [job, setjob] = useState(null)

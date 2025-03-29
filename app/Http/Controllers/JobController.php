@@ -162,7 +162,9 @@ class JobController extends Controller
         $jobApplication = JobApplication::create([
             'job_id' => $request->job_id,
             'applicant_id' => Auth::user()->id,
-
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'linked_in' => $request->linkedIn,
             'resume_url' => $resumeUrl,
             'cover_letter' => $request->cover_letter,
             'status' => 'Applied',
