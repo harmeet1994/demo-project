@@ -35,7 +35,7 @@ function JobDetails({ id }) {
     }, [])
     return (
         <GuestLayout>
-            <JobApplicationModal jobId={id} isOpen={modal} onClose={() => { setModal(false) }} />
+            <JobApplicationModal jobId={id} isOpen={modal} onClose={() => { setModal(false) }} job={job} />
             <Loader show={loading} />
             <div style={{ background: "url('/assets/img/jobs/job-banner.png') no-repeat" }} className="pt-80 pb-10 jobDetails">
                 <div className="max-w-5xl mx-auto  bg-white rounded-lg shadow-lg p-6">

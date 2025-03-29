@@ -12,7 +12,7 @@ import { UploadFile } from '@mui/icons-material';
 import submitImage from '../../../public/assets/img/submit.webp';
 import Loader from './Loader';
 
-const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
+const JobApplicationModal = ({ isOpen, onClose, jobId, job }) => {
     const [loading, setLoading] = useState(false);
     const [files, setFiles] = useState([])
     const { Dragger } = Upload;
@@ -133,7 +133,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId }) => {
             ></div>
             <div className="bg-white rounded-xl shadow-lg p-8 w-8/12 mx-auto z-10">
                 <div className="flex justify-between items-center mb-4">
-                    <h1 className="text-2xl font-bold">Apply To Lenskart</h1>
+                    <h1 className="text-2xl font-bold">Apply To {job.company_name}</h1>
                     <button className="text-gray-400 hover:text-gray-600">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
