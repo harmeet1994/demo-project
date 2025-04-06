@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\OrganizationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,9 @@ Route::get('/get-job-postings', [JobController::class, 'index']);
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/bookmark-job', [JobController::class, 'saveJob']);
     Route::post('/save-job', [JobController::class, 'saveJobForm']);
-    
+
     Route::get('/get-job-details', [JobController::class, 'jobDetails']);
-    
+
 });
+
+Route::post('/organizations', [OrganizationController::class, 'store']);

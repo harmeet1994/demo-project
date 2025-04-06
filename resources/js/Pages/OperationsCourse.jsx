@@ -81,8 +81,8 @@ function OperationsCourse() {
     const steps = [
         {
             number: 1,
-            title: "Enroll For Free",
-            description: "Enroll With Some Simple Steps To Guied Your Careeer Pathway That Too For Free"
+            title: "Enroll",
+            description: "Take the first step towards a successful career-enroll now in just a few easy steps!"
         },
         {
             number: 2,
@@ -91,8 +91,8 @@ function OperationsCourse() {
         },
         {
             number: 3,
-            title: "Get Placed",
-            description: "We Help You Get Placed And Provide You Al The Assistance To Give Wings To Your Career"
+            title: "Get Placement Opportunity",
+            description: "Exclusive access to the companies HR and openings "
         },
         {
             number: 4,
@@ -164,7 +164,7 @@ function OperationsCourse() {
                                         </defs>
                                     </svg>
 
-                                    <span className="text-sm">Pay Just 2.35% of Your Annual Salary AFTER Placement</span>
+                                    <span className="text-sm">Job Assistance </span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -179,12 +179,13 @@ function OperationsCourse() {
                                         </defs>
                                     </svg>
 
-                                    <span className="text-sm">No Placement? No Payment!</span>
+                                    <span className="text-sm">1-1 Mentorship
+                                    </span>
                                 </div>
 
                             </div>
                             <div className="flex flex-row space-x-4 justify-center md:justify-start">
-                                <PrimaryButton className="px-10 md:w-fit w-1/2">Apply Now</PrimaryButton>
+                                <PrimaryButton className="px-10 md:w-fit w-1/2">Apply Now For Free</PrimaryButton>
                                 <SecondaryButton className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
                                     Share&nbsp;
                                     <svg
@@ -280,7 +281,7 @@ function OperationsCourse() {
                             </div>
                             <div className='flex flex-col items-center'>
                                 <div className="mb-2 text-gray-400">Program</div>
-                                <div className="md:text-xl font-bold mb-8">Job Assistance + Interview Guarantee</div>
+                                <div className="md:text-xl font-bold mb-8">Job Assistance </div>
                             </div>
                             <div className='flex flex-col items-center'>
 
@@ -316,7 +317,7 @@ function OperationsCourse() {
                         <h2 className="text-5xl font-bold text-[#FF9500] mb-2">Empowering Individuals</h2>
                         <h3 className="text-4xl  text-gray-800 mb-4">Through Personalized Training</h3>
                         <p className="text-gray-700">
-                            Our Programs Are Designed To Provide Job-Ready Skills And Prepare You To Excel In Your Chosen Career Path.
+                            Our Programs Are Designed To Provide Job-Ready Skills And Prepare You<br /> To Excel  In Your Chosen Career Path.
                         </p>
                     </div>
 

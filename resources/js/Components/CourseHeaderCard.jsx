@@ -15,7 +15,7 @@ function CourseHeaderCard({ tagLabel, img, title, bannerText = '' }) {
                     />
 
                 </div>
-                {bannerText && <div className="absolute bottom-0 w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white text-center font-semibold">
+                {bannerText && <div className="absolute bottom-0 w-full py-1.5 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-center font-semibold">
                     {bannerText}
                 </div>}
             </div>

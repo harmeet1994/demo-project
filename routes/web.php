@@ -27,6 +27,9 @@ Route::get('/job-details/{id}', function ($id) {
 Route::get('/contact-us', function () {
     return Inertia::render('ContactUs');
 });
+Route::get('/corporate', function () {
+    return Inertia::render('Corporate');
+});
 Route::get('/ai-course', function () {
     return Inertia::render('Ai');
 })->name('ai-inter');

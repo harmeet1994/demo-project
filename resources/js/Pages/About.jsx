@@ -19,10 +19,12 @@ function About() {
                         About JobSchool
                     </h1>
                     <p class="text-gray-800 text-xl mt-2">
-                        At JobSchool, we are reimagining how students and job seekers navigate their career journeys. Born out
-                        of a passion for education and a commitment to creating equal opportunities, JobSchool bridges the gap
-                        between aspiring professionals and the ever-evolving job market.
+                        We’re not just teaching “ we are transforming futures”
+                        At JobSchool, we help students and job seekers turn potential into performance.
+                        Built on a mission to make career growth accessible to all, we combine practical skills, real-world training, and personal mentorship to bridge the gap between ambition and opportunity.
+
                     </p>
+                    <h4 className='font-bold text-lg'>Learn smart. Grow fast. Get hired.</h4>
                 </div>
 
 

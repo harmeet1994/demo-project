@@ -38,11 +38,7 @@ function Home() {
             title: "Industry-Driven Capstone Projects",
             sub_heading: "Practical challenges sharpening critical thinking and problem-solving skills.",
         },
-        {
-            src: "../assets/img/whychooseus/personalized.png",
-            title: "Personalized Career Mapping",
-            sub_heading: "Tailored career blueprints for long-term success.",
-        },
+
         {
             src: "../assets/img/whychooseus/softskill.png",
             title: "Soft Skills Development",
@@ -53,21 +49,13 @@ function Home() {
             title: "Expert-Led Masterclasses",
             sub_heading: "Insights from industry leaders connecting academics to real-world applications.",
         },
-        {
-            src: "../assets/img/whychooseus/spoken-english.png",
-            title: "Spoken English Workshops",
-            sub_heading: "Training in communication, leadership, and interpersonal skills.",
-        },
+
         {
             src: "../assets/img/whychooseus/education-employment.png",
             title: "Education to Employment",
             sub_heading: "Industry-aligned training to meet employer expectations.",
         },
-        {
-            src: "../assets/img/whychooseus/on-campus.png",
-            title: "On-Campus Job Readiness",
-            sub_heading: "Sessions focusing on teamwork, problem-solving, and professional growth.",
-        },
+
         {
             src: "../assets/img/whychooseus/technology.png",
             title: "Technology Tools Training",

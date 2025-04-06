@@ -1,7 +1,7 @@
 import PrimaryButton from '@/Components/PrimaryButton'
 import SecondaryButton from '@/Components/SecondaryButton'
 import GuestLayout from '@/Layouts/GuestLayout'
-import { Clock } from 'lucide-react'
+import { BookOpen, Calendar, Clock, Code, IndianRupee, Users } from 'lucide-react'
 import React from 'react'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -110,6 +110,45 @@ function LanguageCourse() {
                     </div>
                 </div>
             </section>
+            <section className="py-12 bg-white">
+                <div className="container mx-auto rounded-lg p-6">
+                    <div className="border-l-4 border-yellow-500 pl-4 mb-6">
+                        <h2 className="text-2xl font-bold text-gray-800">Course Overview</h2>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 divide-x">
+                        <div className="flex flex-col items-center p-3  hover:bg-gray-50">
+                            <Clock className="w-5 h-5 text-gray-500 mb-1" />
+                            <p className="text-sm text-gray-500">Duration:</p>
+                            <p className="font-medium">3 Months</p>
+                        </div>
+                        <div className="flex flex-col items-center p-3  hover:bg-gray-50">
+                            <Calendar className="w-5 h-5 text-gray-500 mb-1" />
+                            <p className="text-sm text-gray-500">Sessions:</p>
+                            <p className="font-medium">4 Per Week</p>
+                        </div>
+                        <div className="flex flex-col items-center p-3  hover:bg-gray-50">
+                            <BookOpen className="w-5 h-5 text-gray-500 mb-1" />
+                            <p className="text-sm text-gray-500">Total Classes:</p>
+                            <p className="font-medium">48</p>
+                        </div>
+                        <div className="flex flex-col items-center p-3  hover:bg-gray-50">
+                            <IndianRupee className="w-5 h-5 text-gray-500 mb-1" />
+                            <p className="text-sm text-gray-500">Course Fee:</p>
+                            <p className="font-medium">₹7,999</p>
+                        </div>
+                        <div className="flex flex-col items-center p-3  hover:bg-gray-50">
+                            <Users className="w-5 h-5 text-gray-500 mb-1" />
+                            <p className="text-sm text-gray-500">Class Type:</p>
+                            <p className="font-medium">Small Group Sessions</p>
+                        </div>
+                        <div className="flex flex-col items-center p-3  hover:bg-gray-50">
+                            <Code className="w-5 h-5 text-gray-500 mb-1" />
+                            <p className="text-sm text-gray-500">Projects:</p>
+                            <p className="font-medium">12+ Hands-On Projects</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section>
                 <div class="container mx-auto px-4 md:py-12 py-6">
 
@@ -179,9 +218,13 @@ function LanguageCourse() {
                             <p class="text-lg font-medium mb-4">JobSchool Is Proud To Bring An International Curriculum To India For The Very First Time -</p>
 
                             <div class="mt-8">
-                                <p class="text-gray-700 mb-4">The Direct Instruction Spoken English (DISE) Program</p>
+                                <p class="text-gray-700 mb-4 font-bold text-xl"> DISE – Direct Instruction Spoken English Program</p>
+                                <p class="text-gray-700 mb-4 font-bold ">Helping You Speak English with Confidence — Fast.
+                                </p>
                                 <ul class="list-disc pl-6 mb-6">
-                                    <li class="text-gray-700 mb-2">For Over 30 Years, DISE Has Helped Immigrants In The U.S. Achieve Rapid English Fluency With Proven Success</li>
+                                    <li class="text-gray-700 mb-2">Trusted for over 30 years, the DISE method has helped thousands of learners master spoken English and thrive in the U.S.</li>
+                                    <li class="text-gray-700 mb-2">Proven results. Real-life fluency. No fluff.
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -1032,7 +1075,7 @@ function LanguageCourse() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <span class="font-bold text-gray-800">Batch Name:</span> Oops! English Again
+                                            <span class="font-bold text-gray-800">Batch Name:</span>OfficeTalk
                                         </div>
                                     </div>
 
