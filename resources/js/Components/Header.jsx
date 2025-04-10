@@ -258,7 +258,7 @@ export default function Header() {
           </div>}
 
         {
-          user !== null && <div className="hidden md:flex  gap-2">
+          user !== null && <div className="hidden md:flex gap-2">
 
             <div className="bg-[#FF9500] h-12 w-12 flex items-center justify-center rounded-full text-xl font-bold">
               {user.name[0]}
@@ -267,9 +267,15 @@ export default function Header() {
               <p className="font-semibold">{user.name}</p>
               <p>{user.email}</p>
             </div>
+            <div>
+              <svg onClick={() => { window.location.href = '/logout-page'; }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10 cursor-pointer rotate-180">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+              </svg>
+
+            </div>
           </div>}
       </div>
-
+      <form action="/logout" method="post" id="logoutForm"></form>
       {/* Mobile Navigation Menu */}
       <div
         className={`md:hidden bg-white shadow-lg absolute top-full left-0 w-full transition-all duration-300 ${menuOpen ? "block" : "hidden"

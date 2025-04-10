@@ -21,6 +21,9 @@ Route::get('/about-us', function () {
 Route::get('/jobs', function () {
   return Inertia::render('Jobs');
 });
+Route::get('/courses', function () {
+  return Inertia::render('NavigationHome');
+});
 Route::get('/job-details/{id}', function ($id) {
   return Inertia::render('JobDetails', ['id' => $id]);
 });
