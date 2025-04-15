@@ -6,6 +6,7 @@ import bannerImg2 from '../../../public/assets/img/campus/2.png';
 import PrimaryButton from '@/Components/PrimaryButton';
 import SecondaryButton from '@/Components/SecondaryButton';
 import OrganizationDetailsModal from '@/Components/OrganizationDetailsModal';
+import ClientMarquee from '@/Components/ClientMarquee';
 
 function CareerToCampus() {
   const instructors = [
@@ -450,7 +451,13 @@ function CareerToCampus() {
           </div>
         </div>
       </section>
-
+      <section id="clients" className="py-8 md:py-16">
+        <div className="container mx-auto mb-4 md:mb-8 px-4">
+          <p>Network</p>
+          <h3 className="font-bold font-roboto text-3xl md:text-5xl">200+ Companies that hire our candidates</h3>
+        </div>
+        <ClientMarquee />
+      </section>
     </GuestLayout>
   )
 }

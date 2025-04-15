@@ -173,7 +173,7 @@ function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
             <div data-aos="fade-up" data-aos-delay="100">
-              <div className="d_card d_card_1 cursor-pointer" onClick={() => window.location.href = '/under-maintenance'}>
+              <div className="d_card d_card_1 cursor-pointer" onClick={() => window.location.href = '/courses'}>
                 <div className="content-card">
                   <h2 className="heading mb-0 text-white text-lg md:text-xl lg:text-2xl">
                     Personalized Training
@@ -194,13 +194,13 @@ function Home() {
             </div>
 
             <div data-aos="fade-up" data-aos-delay="200">
-              <div className="d_card d_card_2 cursor-pointer" onClick={() => window.location.href = '/under-maintenance'}>
+              <div className="d_card d_card_2 cursor-pointer" onClick={() => window.location.href = '/career-campus'}>
                 <div className="content-card">
                   <h2 className="heading mb-0 text-white text-lg md:text-xl lg:text-2xl">Campus to Career
                     <p className="text-white text-sm md:text-lg font-normal">For Colleges/Institutes</p>
                   </h2>
                   <p className="data-content">
-                    <a href="/courses" className="text-white inline-flex items-center mt-3 md:mt-5">
+                    <a href="/career-campus" className="text-white inline-flex items-center mt-3 md:mt-5">
                       Know More
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="20"
                         width="20" strokeWidth="1.5" stroke="currentColor" className="ml-2">
@@ -214,13 +214,13 @@ function Home() {
             </div>
 
             <div data-aos="fade-up" data-aos-delay="300">
-              <div className="d_card d_card_3 cursor-pointer" onClick={() => window.location.href = '/under-maintenance'}>
+              <div className="d_card d_card_3 cursor-pointer" onClick={() => window.location.href = '/corporate'}>
                 <div className="content-card">
                   <h2 className="heading mb-0 text-white text-lg md:text-xl lg:text-2xl">Professional Skill Bootcamp
                     <p className="text-white text-sm md:text-lg font-normal">For Companies/Corporates</p>
                   </h2>
                   <p className="data-content">
-                    <a href="/courses" className="text-white inline-flex items-center mt-3 md:mt-5">
+                    <a href="/corporate" className="text-white inline-flex items-center mt-3 md:mt-5">
                       Know More
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="20"
                         width="20" strokeWidth="1.5" stroke="currentColor" className="ml-2">

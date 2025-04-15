@@ -14,6 +14,7 @@ import AccordionGroup from '@mui/joy/AccordionGroup';
 import Accordion, { accordionClasses } from '@mui/joy/Accordion';
 import AccordionDetails from '@mui/joy/AccordionDetails';
 import AccordionSummary from '@mui/joy/AccordionSummary';
+import ClientMarquee from '@/Components/ClientMarquee';
 
 function AiCourseLandingPage() {
   var settings = {
@@ -184,10 +185,17 @@ function AiCourseLandingPage() {
             <div className="flex flex-col items-center p-3  hover:bg-gray-50">
               <Code className="w-5 h-5 text-gray-500 mb-1" />
               <p className="text-sm text-gray-500">Projects:</p>
-              <p className="font-medium">12+ Hands-On Projects</p>
+              <p className="font-medium text-center">12+ Hands-On Projects</p>
             </div>
           </div>
         </div>
+      </section>
+      <section id="clients" className="py-8 md:py-16">
+        <div className="container mx-auto mb-4 md:mb-8 px-4">
+          <p>Network</p>
+          <h3 className="font-bold font-roboto text-3xl md:text-5xl">200+ Companies that hire our candidates</h3>
+        </div>
+        <ClientMarquee />
       </section>
       <div className="relative h-full">
         {/* Why This Course */}
@@ -746,7 +754,7 @@ function AiCourseLandingPage() {
 
               <div className="p-2 px-4 rounded-tr-lg bg-white w-full md:w-fit">
                 <h4 className="font-bold mb-1">Shivansh Shukla</h4>
-                <p className="text-sm text-gray-500 mb-2">SDE 2 at Amazon, Seattle <br />IIT Patna</p>
+                <p className="text-sm text-gray-500 mb-2">IIT Patna,  SDE 2 at Amazon, <br /> Seattle</p>
               </div>
             </div>
           </div>

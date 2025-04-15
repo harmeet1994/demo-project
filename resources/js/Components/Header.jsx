@@ -192,10 +192,11 @@ export default function Header() {
                     <TabPanel value={0}>
                       <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">
                         <DropdownBig.Link href="/operations">
-                          <CourseHeaderCard title={"Sales & Operational Roles"} tagLabel={"Best Seller"} bannerText={"Limited Time Offer"} img={"/assets/img/header/1.png"} />
+                          <CourseHeaderCard title={"Non-tech Courses"} tagLabel={"Best Seller"} bannerText={"Limited Time Offer"} img={"/assets/img/header/1.png"} />
                         </DropdownBig.Link>
-                        <DropdownBig.Link href="/language">  <CourseHeaderCard title={"Language"} tagLabel={"Popular"} img={"/assets/img/header/2.png"} /></DropdownBig.Link>
-                        <DropdownBig.Link href="/ai-course">  <CourseHeaderCard title={"AI/ML Tech Courses"} tagLabel={"Basic + Intermediate"} img={"/assets/img/header/3.png"} bannerText={"Limited Time Offer"} /></DropdownBig.Link>
+                        <DropdownBig.Link href="/ai-course">  <CourseHeaderCard title={"Tech Courses"} tagLabel={"Basic + Intermediate"} img={"/assets/img/header/3.png"} bannerText={"Limited Time Offer"} /></DropdownBig.Link>
+                        <DropdownBig.Link href="/language">  <CourseHeaderCard title={"Professional language course"} tagLabel={"Popular"} img={"/assets/img/header/2.png"} /></DropdownBig.Link>
+
                       </div>
                     </TabPanel>
                     <TabPanel value={1}>
