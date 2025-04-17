@@ -190,13 +190,7 @@ function AiCourseLandingPage() {
           </div>
         </div>
       </section>
-      <section id="clients" className="py-8 md:py-16">
-        <div className="container mx-auto mb-4 md:mb-8 px-4">
-          <p>Network</p>
-          <h3 className="font-bold font-roboto text-3xl md:text-5xl">200+ Companies that hire our candidates</h3>
-        </div>
-        <ClientMarquee />
-      </section>
+
       <div className="relative h-full">
         {/* Why This Course */}
         <section className='sticky top-0'>
@@ -927,6 +921,13 @@ function AiCourseLandingPage() {
             </Accordion>
           </AccordionGroup>
         </div>
+      </section>
+      <section id="clients" className="py-8 md:py-16">
+        <div className="container mx-auto mb-4 md:mb-8 px-4">
+          <p>Network</p>
+          <h3 className="font-bold font-roboto text-3xl md:text-5xl">200+ Companies that hire our candidates</h3>
+        </div>
+        <ClientMarquee />
       </section>
     </GuestLayout>
   );

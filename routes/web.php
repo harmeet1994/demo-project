@@ -49,6 +49,10 @@ Route::get('/blogs', function () {
   return Inertia::render('Blogs');
 })->name('blogs');
 
+Route::get('/blog-detail/{id}', function ($id) {
+  return Inertia::render('BlogDetail', ['id' => $id]);
+})->name('blog-detail');
+
 Route::get('/', function () {
   return Inertia::render('Home');
 })->name('dashboard');

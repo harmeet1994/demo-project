@@ -192,7 +192,7 @@ export default function Header() {
                     <TabPanel value={0}>
                       <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">
                         <DropdownBig.Link href="/operations">
-                          <CourseHeaderCard title={"Non-tech Courses"} tagLabel={"Best Seller"} bannerText={"Limited Time Offer"} img={"/assets/img/header/1.png"} />
+                          <CourseHeaderCard title={"Non-tech Courses"} tagLabel={""} bannerText={"Limited Time Offer"} img={"/assets/img/header/1.png"} />
                         </DropdownBig.Link>
                         <DropdownBig.Link href="/ai-course">  <CourseHeaderCard title={"Tech Courses"} tagLabel={"Basic + Intermediate"} img={"/assets/img/header/3.png"} bannerText={"Limited Time Offer"} /></DropdownBig.Link>
                         <DropdownBig.Link href="/language">  <CourseHeaderCard title={"Professional language course"} tagLabel={"Popular"} img={"/assets/img/header/2.png"} /></DropdownBig.Link>
@@ -202,7 +202,7 @@ export default function Header() {
                     <TabPanel value={1}>
                       <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">
                         <DropdownBig.Link href="/career-campus">
-                          <CourseHeaderCard title={"Career To Campus"} tagLabel={"Best Seller"} bannerText={"Limited Time Offer"} img={"/assets/img/header/campus.png"} />
+                          <CourseHeaderCard title={"Career To Campus"} tagLabel={""} bannerText={"Limited Time Offer"} img={"/assets/img/header/campus.png"} />
                         </DropdownBig.Link>
 
                       </div>
@@ -210,7 +210,7 @@ export default function Header() {
                     <TabPanel value={2}>
                       <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">
                         <DropdownBig.Link href="/corporate">
-                          <CourseHeaderCard title={"Corporate Training"} tagLabel={"Best Seller"} bannerText={"Limited Time Offer"} img={"/assets/img/header/professional.png"} />
+                          <CourseHeaderCard title={"Corporate Training"} tagLabel={""} bannerText={"Limited Time Offer"} img={"/assets/img/header/professional.png"} />
                         </DropdownBig.Link>
 
                       </div>

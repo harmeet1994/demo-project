@@ -43,25 +43,25 @@ function ContactUs() {
                 </div>
                 <hr />
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Connect Us</h3>
+                  <h3 className="text-xl font-bold mb-4">Contact Us</h3>
                   <div className="flex gap-4">
                     <div className="flex items-center">
                       <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-2">
                         <span>📞</span>
                       </div>
-                      <span>44 78329 37148</span>
+                      <span>+91 22690408344</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-2">
                         <span>✉️</span>
                       </div>
-                      <span>Contact@Jobschool.Io</span>
+                      <span>info@jobschool.io</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-2">
                         <span>📍</span>
                       </div>
-                      <span>Rewley Rd, Oxford OX1 2DD</span>
+                      <span>Regus - Delhi</span>
                     </div>
                   </div>
                 </div>

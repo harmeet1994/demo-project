@@ -7,19 +7,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/user', function (Request $request) {
-    return $request->user();
+  return $request->user();
 })->middleware('auth:sanctum');
 
 Route::get('/get-blogs', [BlogController::class, 'getBlogs']);
 Route::get('/get-blogs-list', [BlogController::class, 'getBlogsFull']);
+Route::get('/get-blog', [BlogController::class, 'getBlogById']);
 
 Route::get('/get-job-postings', [JobController::class, 'index']);
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
-    Route::post('/bookmark-job', [JobController::class, 'saveJob']);
-    Route::post('/save-job', [JobController::class, 'saveJobForm']);
+  Route::post('/bookmark-job', [JobController::class, 'saveJob']);
+  Route::post('/save-job', [JobController::class, 'saveJobForm']);
 
-    Route::get('/get-job-details', [JobController::class, 'jobDetails']);
+  Route::get('/get-job-details', [JobController::class, 'jobDetails']);
 
 });
 

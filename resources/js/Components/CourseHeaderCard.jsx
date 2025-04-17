@@ -4,9 +4,9 @@ function CourseHeaderCard({ tagLabel, img, title, bannerText = '' }) {
   return (
     <div className="overflow-hidden shadow-md">
       <div className="relative">
-        <div className="absolute top-0 left-0 bg-gradient-to-l from-[#F84824] to-[#FFA600] text-white px-4 py-1 rounded-br-lg z-10">
+        {tagLabel && <div className="absolute top-0 left-0 bg-gradient-to-l from-[#F84824] to-[#FFA600] text-white px-4 py-1 rounded-br-lg z-10">
           {tagLabel}
-        </div>
+        </div>}
         <div className=" bg-gradient-to-r from-orange-500 to-blue-500 relative">
           <img
             className="h-full w-full object-contain"

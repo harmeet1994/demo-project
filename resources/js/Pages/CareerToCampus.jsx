@@ -58,7 +58,7 @@ function CareerToCampus() {
   };
   const programs = [
     {
-      title: "Soft Skills Development",
+      title: "100% Internship Guarantee",
       description: "Confidence-Building Workshops On Communication, Leadership, And Interview Readiness."
     },
     {
