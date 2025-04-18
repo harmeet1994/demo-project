@@ -61,6 +61,10 @@ Route::get('/career-campus', function () {
   return Inertia::render('CareerToCampus');
 })->name('careertocampus');
 
+Route::get('/course-inquiry', function () {
+  return Inertia::render('CourseInquiry');
+})->name('course-inquiry');
+
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

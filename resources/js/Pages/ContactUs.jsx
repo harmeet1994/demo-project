@@ -36,7 +36,7 @@ function ContactUs() {
                 <div>
                   <h3 className="text-xl font-bold mb-4">Follow Us On</h3>
                   <div className="flex space-x-4">
-                    <a href="#" className="hover:text-blue-300">Twitter</a>
+                    <a href="https://chat.whatsapp.com/LEN1t0yWm4g5L1wxo2bih9" target="_blank" className="hover:text-blue-400">WhatsApp Community</a>
                     <a href="https://www.instagram.com/jobschool_envisionists?igsh=MTZ5M3N1dXMxbXJjdA==" className="hover:text-blue-300">Instagram</a>
                     <a href="https://www.linkedin.com/company/jobcchool/" className="hover:text-blue-300">LinkedIn</a>
                   </div>

@@ -77,9 +77,9 @@ export default function GuestLayout({ children }) {
               <div>
                 <h4 className="text-lg font-semibold">Follow Us</h4>
                 <div className="mt-2 space-y-2">
-                  <a href="#" className="hover:text-blue-400">Twitter</a><br />
-                  <a href="https://www.instagram.com/jobschool_envisionists?igsh=MTZ5M3N1dXMxbXJjdA==" className="hover:text-blue-400">Instagram</a><br />
-                  <a href="https://www.linkedin.com/company/jobcchool/" className="hover:text-blue-400">LinkedIn</a>
+                  <a href="https://chat.whatsapp.com/LEN1t0yWm4g5L1wxo2bih9" target="_blank" className="hover:text-blue-400">WhatsApp Community</a><br />
+                  <a href="https://www.instagram.com/jobschool_envisionists?igsh=MTZ5M3N1dXMxbXJjdA==" target="_blank" className="hover:text-blue-400">Instagram</a><br />
+                  <a href="https://www.linkedin.com/company/jobcchool/" target="_blank" className="hover:text-blue-400">LinkedIn</a>
                 </div>
               </div>
             </div>

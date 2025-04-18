@@ -59,7 +59,7 @@ function CareerToCampus() {
   const programs = [
     {
       title: "100% Internship Guarantee",
-      description: "Confidence-Building Workshops On Communication, Leadership, And Interview Readiness."
+      description: "With a network of 200+ corporate partners, we confidently guarantee internships for all our learners"
     },
     {
       title: "Education To Employment",
