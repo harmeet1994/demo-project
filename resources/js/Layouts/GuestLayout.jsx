@@ -103,11 +103,11 @@ export default function GuestLayout({ children }) {
 
           <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-400">
             <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4">
-              <a href="terms" className="hover:text-blue-400">Terms of Service</a>
+              <a href="/terms-and-conditions" className="hover:text-blue-400">Terms of Service</a>
               <span className="text-gray-500 hidden sm:inline">•</span>
               <p>© <span id="year"></span> JobSchool. All Rights Reserved.</p>
               <span className="text-gray-500 hidden sm:inline">•</span>
-              <a href="privacy" className="hover:text-blue-400">Privacy Policy</a>
+              <a href="/privacy-policy" className="hover:text-blue-400">Privacy Policy</a>
             </div>
           </div>
         </div>
