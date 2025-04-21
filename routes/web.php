@@ -65,6 +65,14 @@ Route::get('/course-inquiry', function () {
   return Inertia::render('CourseInquiry');
 })->name('course-inquiry');
 
+Route::get('/privacy-policy', function () {
+  return Inertia::render('PrivacyPolicy');
+})->name('privacy-policy');
+
+Route::get('/terms-and-conditions', function () {
+  return Inertia::render('TermsAndConditions');
+})->name('terms-and-conditions');
+
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
