@@ -65,6 +65,10 @@ Route::get('/course-inquiry', function () {
   return Inertia::render('CourseInquiry');
 })->name('course-inquiry');
 
+Route::get('/course-inquiry-corporate', function () {
+  return Inertia::render('CourseInquiryCorporate');
+})->name('course-inquiry-corporate');
+
 Route::get('/privacy-policy', function () {
   return Inertia::render('PrivacyPolicy');
 })->name('privacy-policy');
