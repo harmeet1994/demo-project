@@ -1047,7 +1047,7 @@ function LanguageCourse() {
 
                 <div class="inline-block border border-[#E88700] bg-[#FFF7EB] rounded-lg px-4 py-2 mb-6">
                   <span class="flex items-center text-gray-800 font-bold">
-                    <span class="text-yellow-500 mr-2">★</span> Training Program : Oops! English Again
+                    <span class="text-yellow-500 mr-2">★</span> Training Program : Elevate English
                   </span>
                 </div>
 

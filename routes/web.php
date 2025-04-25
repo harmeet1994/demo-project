@@ -65,6 +65,10 @@ Route::get('/course-inquiry', function () {
   return Inertia::render('CourseInquiry');
 })->name('course-inquiry');
 
+Route::get('/language-webinar-form', function () {
+  return Inertia::render('LanguageWebinar');
+})->name('language-webinar');
+
 Route::get('/course-inquiry-corporate', function () {
   return Inertia::render('CourseInquiryCorporate');
 })->name('course-inquiry-corporate');
@@ -91,5 +95,15 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
   Route::resource('jobs', App\Http\Controllers\Admin\JobController::class);
   Route::resource('blogs', App\Http\Controllers\Admin\BlogController::class);
 });
+
+// Payment callback routes
+Route::get('/payment/success', [App\Http\Controllers\PaymentController::class, 'paymentSuccess'])->name('payment.success');
+Route::get('/payment/failure', [App\Http\Controllers\PaymentController::class, 'paymentFailure'])->name('payment.failure');
+Route::get('/thankyou', function () {
+  return Inertia::render('ThankYou');
+})->name('thankyou');
+Route::get('/payment/failed', function () {
+  return Inertia::render('PaymentFailed');
+})->name('payment.failed');
 
 require __DIR__ . '/auth.php';

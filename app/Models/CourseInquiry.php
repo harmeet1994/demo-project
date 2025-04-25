@@ -9,6 +9,7 @@ class CourseInquiry extends Model
 {
   use HasFactory;
 
+  protected $table = 'course_inquiries';
   /**
    * The attributes that are mass assignable.
    *

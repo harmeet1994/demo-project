@@ -14,7 +14,7 @@ const TermsAndConditions = () => {
 
           <div className="space-y-6 text-gray-700 mt-6">
             <p>
-              These terms and conditions outline the rules and regulations for the use of JobSchool's Website, located at <a href="https://jobschool.io/" className="text-blue-600 hover:text-blue-800">JobSchool- By Envisionist</a>.
+              These terms and conditions outline the rules and regulations for the use of the JobSchool website, accessible under the name <a href="https://jobschool.io/" className="text-blue-600 hover:text-blue-800">'JobSchool – By Envisionist'</a>.The website is owned and operated by Envisionists, the legal entity responsible for its content and services.
             </p>
 
             <p>
