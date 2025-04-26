@@ -109,45 +109,7 @@ const LanguageWebinar = () => {
       <Head title="Language Webinar" />
 
       <div className=" mx-auto py-4 px-4 md:px-6 lg:px-8">
-        <section className=" bg-white">
-          <div className=" mx-auto rounded-lg p-6">
-            <div className="border-l-4 border-yellow-500 pl-4 mb-6">
-              <h2 className="text-2xl font-bold text-gray-800">Course Overview</h2>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 divide-x">
-              <div className="flex flex-col items-center p-3  hover:bg-gray-50">
-                <Clock className="w-5 h-5 text-gray-500 mb-1" />
-                <p className="text-sm text-gray-500">Duration:</p>
-                <p className="font-medium">3 Months</p>
-              </div>
-              <div className="flex flex-col items-center p-3  hover:bg-gray-50">
-                <Calendar className="w-5 h-5 text-gray-500 mb-1" />
-                <p className="text-sm text-gray-500">Sessions:</p>
-                <p className="font-medium">4 Per Week</p>
-              </div>
-              <div className="flex flex-col items-center p-3  hover:bg-gray-50">
-                <BookOpen className="w-5 h-5 text-gray-500 mb-1" />
-                <p className="text-sm text-gray-500">Total Classes:</p>
-                <p className="font-medium">48</p>
-              </div>
-              <div className="flex flex-col items-center p-3  hover:bg-gray-50">
-                <IndianRupee className="w-5 h-5 text-gray-500 mb-1" />
-                <p className="text-sm text-gray-500">Course Fee:</p>
-                <p className="font-medium">₹7,999</p>
-              </div>
-              <div className="flex flex-col items-center p-3  hover:bg-gray-50">
-                <Users className="w-5 h-5 text-gray-500 mb-1" />
-                <p className="text-sm text-gray-500">Class Type:</p>
-                <p className="font-medium">Small Group Sessions</p>
-              </div>
-              <div className="flex flex-col items-center p-3  hover:bg-gray-50">
-                <Code className="w-5 h-5 text-gray-500 mb-1" />
-                <p className="text-sm text-gray-500">Projects:</p>
-                <p className="font-medium text-center">12+ Hands-On Projects</p>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         <section className=" w-10/12 mx-auto bg-white py-5">
           <div className="flex flex-col md:flex-row">
