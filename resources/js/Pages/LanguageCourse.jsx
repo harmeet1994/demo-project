@@ -237,7 +237,7 @@ function LanguageCourse() {
 
             <div class="w-full md:w-1/2">
               <h1 class="text-4xl md:text-5xl font-bold mb-6">The Professional English Speaking Course</h1>
-              <p class="text-lg font-medium mb-4">JobSchool Is Proud To Bring An International Curriculum To India For The Very First Time -</p>
+              <p class="text-lg font-medium mb-4">JobSchool Is Proud To Bring An International Curriculum To India-</p>
 
               <div class="mt-8">
                 <p class="text-gray-700 mb-4 font-bold text-xl"> DISE – Direct Instruction Spoken English Program</p>
