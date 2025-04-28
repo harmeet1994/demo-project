@@ -195,7 +195,7 @@ export default function Header() {
                           <CourseHeaderCard title={"Non-tech Courses"} tagLabel={""} bannerText={"Limited Time Offer"} img={"/assets/img/header/1.png"} />
                         </DropdownBig.Link>
                         <DropdownBig.Link href="/ai-course">  <CourseHeaderCard title={"Tech Courses"} tagLabel={"Basic + Intermediate"} img={"/assets/img/header/3.png"} bannerText={"Limited Time Offer"} /></DropdownBig.Link>
-                        <DropdownBig.Link href="/language">  <CourseHeaderCard title={"Professional language course"} tagLabel={"Popular"} img={"/assets/img/header/2.png"} /></DropdownBig.Link>
+                        <DropdownBig.Link href="/language">  <CourseHeaderCard title={"Professional language course"} img={"/assets/img/header/2.png"} /></DropdownBig.Link>
 
                       </div>
                     </TabPanel>
@@ -294,10 +294,10 @@ export default function Header() {
             <AccordionDetails>
               <div className='flex flex-col space-y-4 pl-5 py-4'>
                 <NavLink href="/operations" className="hover:text-blue-600">
-                  Sales & Operational Roles
+                  Non-tech Courses
                 </NavLink>
                 <NavLink href="/language" className="hover:text-blue-600">
-                  Language
+                  Professional Language Course
                 </NavLink>
                 <NavLink href="/ai-course" className="hover:text-blue-600">
                   Tech Courses

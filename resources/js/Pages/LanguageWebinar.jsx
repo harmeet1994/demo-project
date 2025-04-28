@@ -108,11 +108,9 @@ const LanguageWebinar = () => {
     <GuestLayout>
       <Head title="Language Webinar" />
 
-      <div className=" mx-auto py-4 px-4 md:px-6 lg:px-8">
-
-
+      <div className=" mx-auto py-4 px-4 md:px-6 lg:px-8 max-w-7xl">
         <section className=" w-10/12 mx-auto bg-white py-5">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col-reverse md:flex-row gap-4">
             <div className="md:w-1/2 w-full">
               <img src="/assets/img/language/language-banner-main.jpeg" alt="Language Webinar" />
             </div>
