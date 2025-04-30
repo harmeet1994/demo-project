@@ -234,9 +234,9 @@ export default function Header() {
             </NavLink>
             {
               user !== null && user.is_admin && (
-                <NavLink href="/admin" className="hover:text-blue-600">
+                <a href="/admin" className="hover:text-blue-600 inline-flex items-center border-b-2 px-1 pt-1 font-semibold  leading-5 transition duration-150 ease-in-out focus:outline-none ">
                   Admin
-                </NavLink>
+                </a>
               )
             }
           </nav>
