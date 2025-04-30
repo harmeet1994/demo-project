@@ -232,6 +232,13 @@ export default function Header() {
             <NavLink href="/contact-us" className="hover:text-blue-600">
               Contact
             </NavLink>
+            {
+              user !== null && user.is_admin && (
+                <NavLink href="/admin" className="hover:text-blue-600">
+                  Admin
+                </NavLink>
+              )
+            }
           </nav>
         </div>
 
