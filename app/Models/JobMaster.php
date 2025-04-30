@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class JobMaster extends Model
 {
-    public $timestamps = false;
+  public $timestamps = false;
+
+  protected $guarded = [];
 }

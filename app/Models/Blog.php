@@ -6,7 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    protected $table = 'wp_blogs';
+  protected $table = 'wp_blogs';
+  protected $primaryKey = 'ID';
 
-    public $timestamps = false;
+  protected $fillable = [
+    'Blog_title',
+    'Blog_desc',
+    'Blog_publish_date',
+    'custom_url',
+    'Blog_image',
+    'BlogType',
+    'guid'
+  ];
+
+  public $timestamps = false;
 }

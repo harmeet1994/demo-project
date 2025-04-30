@@ -90,10 +90,15 @@ Route::middleware('auth')->group(function () {
 Route::get('/auth/google', [GoogleController::class, 'redirect'])->name('auth.google');
 Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
   Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
   Route::resource('jobs', App\Http\Controllers\Admin\JobController::class);
   Route::resource('blogs', App\Http\Controllers\Admin\BlogController::class);
+
+  // Job Applications routes
+  Route::get('applications', [App\Http\Controllers\Admin\JobApplicationController::class, 'index'])->name('applications.index');
+  Route::get('applications/{id}', [App\Http\Controllers\Admin\JobApplicationController::class, 'show'])->name('applications.show');
+  Route::put('applications/{id}/status', [App\Http\Controllers\Admin\JobApplicationController::class, 'updateStatus'])->name('applications.update-status');
 });
 
 // Payment callback routes
