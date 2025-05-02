@@ -20,5 +20,8 @@ class CourseInquiry extends Model
     'email',
     'phone',
     'course_type',
+    'payment_status',
+    'payment_info',
+    'transaction_id'
   ];
 }

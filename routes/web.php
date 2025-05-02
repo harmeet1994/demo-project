@@ -99,6 +99,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
   Route::get('applications', [App\Http\Controllers\Admin\JobApplicationController::class, 'index'])->name('applications.index');
   Route::get('applications/{id}', [App\Http\Controllers\Admin\JobApplicationController::class, 'show'])->name('applications.show');
   Route::put('applications/{id}/status', [App\Http\Controllers\Admin\JobApplicationController::class, 'updateStatus'])->name('applications.update-status');
+
+  // Course Inquiry Routes
+  Route::get('course-inquiries', [App\Http\Controllers\Admin\CourseInquiryController::class, 'index'])->name('course-inquiries.index');
+  Route::get('course-inquiries/{id}', [App\Http\Controllers\Admin\CourseInquiryController::class, 'show'])->name('course-inquiries.show');
 });
 
 // Payment callback routes
