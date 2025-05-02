@@ -24,23 +24,24 @@ class PaymentController extends Controller
 
     $inquiry = CourseInquiry::create($validated);
 
-    return response()->json([
-      'success' => true,
-      'message' => 'Inquiry submitted successfully',
-      'data' => $inquiry
-    ], 201);
+    // return response()->json([
+    //   'success' => true,
+    //   'message' => 'Inquiry submitted successfully',
+    //   'data' => $inquiry
+    // ], 201);
 
     // PayU Money Configuration
-    $merchantKey = env('PAYU_MERCHANT_KEY');
+    $merchantKey = config('app.payu_merchant_key');
 
-    $salt = env('PAYU_SALT');
-    $payuBaseUrl = env('PAYU_BASE_URL', 'https://secure.payu.in');
+    $salt = config('app.payu_salt');
+
+    $payuBaseUrl = config('app.payu_base_url');
 
     // Generate unique transaction ID
     $txnId = 'TXN' . time() . rand(10000, 99999);
 
     // Set amount - for language course, it's fixed at 7,999
-    $amount = '7999';
+    $amount = '21';
 
     // Prepare PayU parameters
     $params = [
@@ -53,12 +54,12 @@ class PaymentController extends Controller
       'phone' => $validated['phone'],
       'surl' => route('payment.success'),
       'furl' => route('payment.failure'),
-      'service_provider' => 'payu_paisa',
+      'udf1' => $inquiry->id
     ];
 
     // Calculate hash
     $hashString = $merchantKey . '|' . $txnId . '|' . $amount . '|' . 'Language Course Fee' . '|' .
-      $validated['name'] . '|' . $validated['email'] . '|||||||||||' . $salt;
+      $validated['name'] . '|' . $validated['email'] . '|' . $inquiry->id . '||||||||||' . $salt;
     $hash = strtolower(hash('sha512', $hashString));
 
     // Log payment attempt
@@ -77,6 +78,11 @@ class PaymentController extends Controller
     Log::info('Payment success', $request->all());
 
     // You can update your database records here
+    $inquiry = CourseInquiry::find($request->udf1);
+    $inquiry->payment_info = json_encode($request->all());
+    $inquiry->payment_status = 'paid';
+    $inquiry->transaction_id = $request->txnid;
+    $inquiry->save();
 
     // Redirect to a thank you page
     return redirect()->route('thankyou');
@@ -86,8 +92,14 @@ class PaymentController extends Controller
   {
     // Handle failed payment
     Log::info('Payment failure', $request->all());
-
+    $inquiry = CourseInquiry::find($request->udf1);
+    $inquiry->payment_status = 'failed';
+    $inquiry->transaction_id = $request->txnid;
+    $inquiry->payment_info = json_encode($request->all());
+    $inquiry->save();
     // Redirect to a payment failed page
     return redirect()->route('payment.failed');
   }
+
+
 }

@@ -43,12 +43,7 @@ const PaymentFailed = () => {
             </div>
 
             <div className="space-x-4">
-              <Link
-                href="/language-webinar"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-150 ease-in-out"
-              >
-                Try Again
-              </Link>
+
 
               <Link
                 href="/"

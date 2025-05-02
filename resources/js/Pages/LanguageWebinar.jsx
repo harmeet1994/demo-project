@@ -67,29 +67,29 @@ const LanguageWebinar = () => {
     try {
       // Initiate payment through our backend
       const response = await axios.post('/api/initiate-payment', formData);
-      window.location.href = '/thankyou';
-      setSubmitted(true);
+      // window.location.href = '/thankyou';
+      // setSubmitted(true);
       // // Extract payment data returned from our backend
-      // const { payuBaseUrl, params } = response.data;
+      const { payuBaseUrl, params } = response.data;
 
-      // // Create a form to submit to PayU
-      // const form = document.createElement('form');
-      // form.setAttribute('method', 'post');
-      // form.setAttribute('action', payuBaseUrl);
-      // form.setAttribute('target', '_self');
+      // Create a form to submit to PayU
+      const form = document.createElement('form');
+      form.setAttribute('method', 'post');
+      form.setAttribute('action', payuBaseUrl);
+      form.setAttribute('target', '_self');
 
-      // // Add all payment parameters as hidden form fields
-      // for (const key in params) {
-      //   const hiddenField = document.createElement('input');
-      //   hiddenField.setAttribute('type', 'hidden');
-      //   hiddenField.setAttribute('name', key);
-      //   hiddenField.setAttribute('value', params[key]);
-      //   form.appendChild(hiddenField);
-      // }
+      // Add all payment parameters as hidden form fields
+      for (const key in params) {
+        const hiddenField = document.createElement('input');
+        hiddenField.setAttribute('type', 'hidden');
+        hiddenField.setAttribute('name', key);
+        hiddenField.setAttribute('value', params[key]);
+        form.appendChild(hiddenField);
+      }
 
-      // // Append form to body and submit
-      // document.body.appendChild(form);
-      // form.submit();
+      // Append form to body and submit
+      document.body.appendChild(form);
+      form.submit();
 
       // Form will redirect to PayU, so we don't need to set submitted state here
     } catch (error) {
