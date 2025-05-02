@@ -41,7 +41,7 @@ class PaymentController extends Controller
     $txnId = 'TXN' . time() . rand(10000, 99999);
 
     // Set amount - for language course, it's fixed at 7,999
-    $amount = '1';
+    $amount = '21';
 
     // Prepare PayU parameters
     $params = [
