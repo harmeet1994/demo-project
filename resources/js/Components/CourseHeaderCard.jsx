@@ -20,7 +20,7 @@ function CourseHeaderCard({ tagLabel, img, title, bannerText = '' }) {
         </div>}
       </div>
       <div className="p-4 bg-white">
-        <h2 className="text-lg font-medium">{title}</h2>
+        <h2 className=" font-medium">{title}</h2>
       </div>
     </div>
   )
