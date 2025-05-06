@@ -19,12 +19,13 @@ return Application::configure(basePath: dirname(__DIR__))
     ]);
 
     $middleware->validateCsrfTokens(except: [
-      'payment/*'
+      'payment/*',
+      'admin/login',
     ]);
-    // $middleware->alias([
-    // \App\Http\Middleware\AdminMiddleware::class,
-    //     'admin' => \App\Http\Middleware\AdminMiddleware::class,
-    // ]);
+    $middleware->alias([
+      \App\Http\Middleware\AdminMiddleware::class,
+      'admin' => \App\Http\Middleware\AdminMiddleware::class,
+    ]);
     $middleware->statefulApi();
 
     //

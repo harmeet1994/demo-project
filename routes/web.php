@@ -90,7 +90,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/auth/google', [GoogleController::class, 'redirect'])->name('auth.google');
 Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
 
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
   Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
   Route::resource('jobs', App\Http\Controllers\Admin\JobController::class);
   Route::resource('blogs', App\Http\Controllers\Admin\BlogController::class);
@@ -116,3 +116,13 @@ Route::get('/payment/failed', function () {
 })->name('payment.failed');
 
 require __DIR__ . '/auth.php';
+
+// Admin Authentication Routes
+Route::middleware('guest')->prefix('admin')->name('admin.')->group(function () {
+  Route::get('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'create'])->name('login');
+  Route::post('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'store'])->name('login.store');
+});
+
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+  Route::post('/logout', [App\Http\Controllers\Auth\AdminLoginController::class, 'destroy'])->name('logout');
+});
