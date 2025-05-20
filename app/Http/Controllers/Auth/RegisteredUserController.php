@@ -29,6 +29,7 @@ class RegisteredUserController extends Controller
    */
   public function store(Request $request): RedirectResponse
   {
+
     $request->validate([
       'name' => 'required|string|max:255',
       'mobile' => 'required|numeric|min_digits:10',

@@ -1,1 +1,0 @@
-import{j as e}from"./app-DH9JhNBr.js";import{$ as t}from"./GuestLayout-Dj-kPwfQ.js";function s({show:r}){return e.jsx("div",{children:r&&e.jsx("div",{className:"fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-70 flex justify-center items-center z-50",children:e.jsx(t,{visible:!0,color:"#E88700"})})})}export{s as L};

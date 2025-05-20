@@ -7,9 +7,11 @@ import Loader from '@/Components/Loader';
 import { Snackbar } from '@mui/joy';
 import { usePage } from '@inertiajs/react';
 import { Pagination } from '@mui/material';
+import PostJobButton from '@/Components/PostJobButton';
 
 
 function Jobs() {
+  const user = usePage().props.auth.user;
   const [activeTab, setActiveTab] = useState('All Posts');
   const [title, setTitle] = useState("")
   const [page, setPage] = useState(1)
@@ -65,7 +67,6 @@ function Jobs() {
     }
   }
 
-  const user = usePage().props.auth.user;
   const saveJob = (id) => {
     if (!user) {
       setOpen(true);
@@ -170,7 +171,7 @@ function Jobs() {
               <p className="text-gray-600">Jobs Found</p>
             </div>
 
-            <div className="flex space-x-2 justify-between w-full">
+            <div className="flex space-x-2 justify-between w-full items-center">
               <div className="flex gap-4">
                 {tabs.map(tab => (
                   <button
@@ -182,10 +183,7 @@ function Jobs() {
                   </button>
                 ))}
               </div>
-
-              {/* <button className="p-2 bg-white border rounded-md">
-                                <Filter size={20} />
-                            </button> */}
+              <PostJobButton />
             </div>
           </div>
 

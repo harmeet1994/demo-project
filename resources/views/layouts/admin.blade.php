@@ -38,6 +38,10 @@
           class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 {{ request()->routeIs('admin.course-inquiries.*') ? 'bg-gray-700' : '' }}">
           Course Inquiries
         </a>
+        <a href="{{ route('admin.users.index') }}"
+          class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 {{ request()->routeIs('admin.users.*') ? 'bg-gray-700' : '' }}">
+          Users
+        </a>
       </nav>
     </div>
 

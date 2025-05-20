@@ -15,8 +15,13 @@ import Accordion, { accordionClasses } from '@mui/joy/Accordion';
 import AccordionDetails from '@mui/joy/AccordionDetails';
 import AccordionSummary from '@mui/joy/AccordionSummary';
 import ClientMarquee from '@/Components/ClientMarquee';
-
+import { usePage } from '@inertiajs/react';
+import { useState } from 'react';
+import OrderDetailsModal from '@/Components/OrderDetailsModal';
 function AiCourseLandingPage() {
+  const [showOrderModal, setShowOrderModal] = useState(false);
+  const user = usePage().props.auth.user;
+
   var settings = {
     dots: true,
     infinite: false,
@@ -57,6 +62,16 @@ function AiCourseLandingPage() {
   };
   return (
     <GuestLayout>
+      {showOrderModal && <OrderDetailsModal
+        onClose={() => setShowOrderModal(false)}
+        isOpen={showOrderModal}
+        courseTitle="AI/ML Intermediate Course"
+        courseDescription="A comprehensive program designed for students from both Technical and Non-Technical backgrounds to help them land AI &amp; Machine Learning jobs and internships"
+        courseDuration="3 Months"
+        courseSessions="2 Per Week"
+        coursePrice="₹ 12,500"
+        courseClasses="24"
+      />}
       {/* Hero Section */}
       <section className="relative bg-black text-white md:block flex flex-col-reverse">
         <div className="md:absolute inset-0 z-20 bg-black bg-opacity-50 bg-blend-overlay p-5 md:p-0">
@@ -117,7 +132,7 @@ function AiCourseLandingPage() {
               </div>
               <div className="flex flex-row space-x-4 justify-center md:justify-start">
 
-                <PrimaryButton onClick={() => { window.location.href = 'https://dashboard-staging.payu.in/web/CD4F157F4859FD04529B8092B16BCE7A'; }} className="px-10 md:w-fit w-1/2">Apply Now</PrimaryButton>
+                <PrimaryButton onClick={() => { if (user) { setShowOrderModal(true) } else { window.location.href = '/login' } }} className="px-10 md:w-fit w-1/2">Apply Now</PrimaryButton>
                 <SecondaryButton className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
                   Share&nbsp;
                   <svg

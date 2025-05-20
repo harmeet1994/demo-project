@@ -103,9 +103,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
   // Course Inquiry Routes
   Route::get('course-inquiries', [App\Http\Controllers\Admin\CourseInquiryController::class, 'index'])->name('course-inquiries.index');
   Route::get('course-inquiries/{id}', [App\Http\Controllers\Admin\CourseInquiryController::class, 'show'])->name('course-inquiries.show');
+
+  // User Management Routes
+  Route::get('users', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
+  Route::get('users/export', [App\Http\Controllers\Admin\UserController::class, 'export'])->name('users.export');
 });
 
-// Payment callback routes
+Route::post('jobs', [App\Http\Controllers\JobController::class, 'jobPost'])->name('jobs.post');
+
 Route::any('/payment/success', [App\Http\Controllers\PaymentController::class, 'paymentSuccess'])->name('payment.success');
 Route::any('/payment/failure', [App\Http\Controllers\PaymentController::class, 'paymentFailure'])->name('payment.failure');
 Route::get('/thankyou', function () {
@@ -114,6 +119,10 @@ Route::get('/thankyou', function () {
 Route::get('/payment/failed', function () {
   return Inertia::render('PaymentFailed');
 })->name('payment.failed');
+
+// Course Registration payment callbacks
+Route::any('/registration/payment/success', [App\Http\Controllers\CourseRegistrationController::class, 'paymentSuccess'])->name('registration.payment.success');
+Route::any('/registration/payment/failure', [App\Http\Controllers\CourseRegistrationController::class, 'paymentFailure'])->name('registration.payment.failure');
 
 require __DIR__ . '/auth.php';
 

@@ -1,8 +1,7 @@
-import PrimaryButton from '@/Components/PrimaryButton'
+import React, { useState } from "react"
 import SecondaryButton from '@/Components/SecondaryButton'
 import GuestLayout from '@/Layouts/GuestLayout'
 import { BookOpen, Calendar, Clock, Code, IndianRupee, Users } from 'lucide-react'
-import React from 'react'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,9 +14,15 @@ import Accordion, { accordionClasses } from '@mui/joy/Accordion';
 import AccordionDetails from '@mui/joy/AccordionDetails';
 import AccordionSummary from '@mui/joy/AccordionSummary';
 import ClientMarquee from '@/Components/ClientMarquee'
+import OrderDetailsModal from '@/Components/OrderDetailsModal'
 import { modules } from "../data/modules"
+import PrimaryButton from "@/Components/PrimaryButton";
+import { usePage } from "@inertiajs/react";
 
 function LanguageCourse() {
+  const user = usePage().props.auth.user;
+
+  const [showOrderModal, setShowOrderModal] = useState(false);
   const instructors = [
     {
       name: "Rishabh Arora",
@@ -78,6 +83,17 @@ function LanguageCourse() {
   };
   return (
     <GuestLayout>
+      {/* Order Details Modal */}
+      <OrderDetailsModal
+        isOpen={showOrderModal}
+        onClose={() => setShowOrderModal(false)}
+        courseTitle="Elevate English"
+        courseDescription="Master the Art of English communication with our comprehensive courses!"
+        courseDuration="3 Months"
+        courseSessions="4 Per Week"
+        coursePrice="₹ 7,999"
+        courseClasses="48"
+      />
       <section className="relative bg-black text-white md:block flex flex-col-reverse">
         <div className="md:absolute inset-0 z-20 bg-black bg-opacity-40 bg-blend-overlay p-5 md:p-0">
           <div className="flex h-full px-4 md:px-10 md:items-center">
@@ -96,7 +112,7 @@ function LanguageCourse() {
                 <p>Classes Starting Soon - Enroll Now</p>
               </div>
               <div className="flex flex-row space-x-4 justify-center md:justify-start">
-                <PrimaryButton className="px-10 md:w-fit w-1/2">Apply Now</PrimaryButton>
+                <PrimaryButton onClick={() => { if (user) { setShowOrderModal(true) } else { window.location.href = '/login' } }} className="px-10 md:w-fit w-1/2">Apply Now</PrimaryButton>
                 <SecondaryButton className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
                   Share&nbsp;
                   <svg
@@ -1347,4 +1363,5 @@ function LanguageCourse() {
   )
 }
 
-export default LanguageCourse
+
+export default LanguageCourse;

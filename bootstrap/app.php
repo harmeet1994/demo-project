@@ -21,6 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
     $middleware->validateCsrfTokens(except: [
       'payment/*',
       'admin/login',
+      "registration/payment/failure",
+      "registration/payment/success",
     ]);
     $middleware->alias([
       \App\Http\Middleware\AdminMiddleware::class,
