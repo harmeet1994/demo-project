@@ -558,27 +558,51 @@ function LanguageCourse() {
               </div>
             </div>
             <div className="md:max-w-6xl mx-auto md:p-4 font-sans">
-              <Tabs aria-label="Basic tabs" defaultValue={0} className='bg-blue-500'>
-                <TabList sx={{
-                  backgroundColor: "#D8E4FF",
-                }}>
-                  {modules.map((module, index) => (
-                    <Tab key={index} sx={{
-                      cursor: 'pointer',
-                      color: '#000',
-                      fontWeight: 500,
-                      fontSize: '16px',
-                      py: 1.5,
-                      '&.Mui-selected': {
-                        color: '#fff',
-                        fontWeight: 600,
-                        backgroundColor: '#8AAFFF',
-                        '--Tab-indicatorColor': '#133FA0', // Orange indicator
-                        '--Tab-indicatorThickness': '3px', // Thicker indicator line
-                      }
-                    }}>{module.title}</Tab>
+              <Tabs
+                aria-label="Course modules"
+                defaultValue={0}
+                sx={{
+                  width: '100%',
+                  overflowX: 'hidden',           // turn off outer scrollbars
+                }}
+              >
+                <TabList
+                  sx={{
+                    bgcolor: '#D8E4FF',
+                    display: 'flex',
+                    flexWrap: { xs: 'nowrap', md: 'nowrap' },   // one row on mobile, wrap on desktop
+                    overflowX: { xs: 'auto', md: 'auto' },
+                    scrollSnapType: { xs: 'x mandatory', md: 'none' },
+                    gap: 1,
+                    /* hide mobile scrollbar (works in WebKit & Firefox) */
+                    '::-webkit-scrollbar': { display: 'none' },
+                    scrollbarWidth: 'none',
+                  }}
+                >
+                  {modules.map((m, i) => (
+                    <Tab
+                      key={i}
+                      sx={{
+                        scrollSnapAlign: 'start',
+                        flexShrink: 0,
+                        minWidth: { xs: 'max-content', sm: 140 },
+                        px: { xs: 2.5, sm: 3 },
+                        py: 1.25,
+                        fontSize: { xs: 14, sm: 16 },
+                        fontWeight: 500,
+                        color: '#000',
+                        '&.Mui-selected': {
+                          color: '#fff',
+                          fontWeight: 600,
+                          bgcolor: '#8AAFFF',
+                          '--Tab-indicatorColor': '#133FA0',
+                          '--Tab-indicatorThickness': '3px',
+                        },
+                      }}
+                    >
+                      {m.title}
+                    </Tab>
                   ))}
-
                 </TabList>
 
 
@@ -772,7 +796,7 @@ function LanguageCourse() {
 
 
                 <div class="flex gap-3">
-                  <button class="bg-[#FF9500] hover:bg-[#FF9500]/90 text-white py-4 px-6 rounded-lg flex-1 font-medium text-lg transition-colors">
+                  <button onClick={() => { if (user) { setShowOrderModal(true) } else { window.location.href = '/login' } }} class="bg-[#FF9500] hover:bg-[#FF9500]/90 text-white py-4 px-6 rounded-lg flex-1 font-medium text-lg transition-colors">
                     Apply Now
                   </button>
                   <button class="bg-gray-200 p-4 rounded-lg flex items-center justify-center w-20">
