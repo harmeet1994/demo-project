@@ -8,6 +8,7 @@ import OrganizationDetailsModal from '@/Components/OrganizationDetailsModal';
 import axios from 'axios';
 import { message } from 'antd';
 import ClientMarquee from '@/Components/ClientMarquee';
+import ShareModal from '@/Components/ShareModalDemo';
 
 
 const Corporate = () => {
@@ -18,6 +19,7 @@ const Corporate = () => {
     message.success(formData.message)
 
   };
+  const [isShareOpen, setIsShareOpen] = useState(false);
   return (
     <GuestLayout>
 
@@ -44,7 +46,7 @@ const Corporate = () => {
                 <p className='text-lg font-bold mb-8'>Don’t Let Your Team Stay in the Shadows.</p>
                 <div className="flex flex-row space-x-4 justify-center md:justify-start">
                   <PrimaryButton className="px-10 md:w-fit w-1/2 text-lg" onClick={() => setShowModal(true)}>Connect with us</PrimaryButton>
-                  <SecondaryButton className="text-yellow-600 px-10 md:w-fit w-1/2 text-lg bg-yellow-50">
+                  <SecondaryButton onClick={() => { setIsShareOpen(true) }} className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
                     Share&nbsp;
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +63,7 @@ const Corporate = () => {
                       />
                     </svg>
                   </SecondaryButton>
+                  <ShareModal isOpen={isShareOpen} shareUrl={window.location} onClose={() => setIsShareOpen(false)} />
                 </div>
               </div>
             </div>

@@ -7,6 +7,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import SecondaryButton from '@/Components/SecondaryButton';
 import OrganizationDetailsModal from '@/Components/OrganizationDetailsModal';
 import ClientMarquee from '@/Components/ClientMarquee';
+import ShareModal from '@/Components/ShareModalDemo';
 
 function CareerToCampus() {
   const instructors = [
@@ -56,6 +57,7 @@ function CareerToCampus() {
     message.success(formData.message)
 
   };
+  const [isShareOpen, setIsShareOpen] = useState(false);
   const programs = [
     {
       title: "100% Internship Guarantee",
@@ -114,7 +116,7 @@ function CareerToCampus() {
               <p className='text-lg font-bold mb-8'>Empowering Students Through Campus Program</p>
               <div className="flex flex-row space-x-4 justify-center md:justify-start">
                 <PrimaryButton className="px-10 md:w-fit w-1/2 text-lg" onClick={() => setShowModal(true)}>Enroll Now</PrimaryButton>
-                <SecondaryButton className="text-yellow-600 px-10 md:w-fit w-1/2 text-lg bg-yellow-50">
+                <SecondaryButton onClick={() => { setIsShareOpen(true) }} className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
                   Share&nbsp;
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +133,7 @@ function CareerToCampus() {
                     />
                   </svg>
                 </SecondaryButton>
+                <ShareModal isOpen={isShareOpen} shareUrl={window.location} onClose={() => setIsShareOpen(false)} />
               </div>
             </div>
           </div>

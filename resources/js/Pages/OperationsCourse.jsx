@@ -7,13 +7,15 @@ import operation3 from '../../../public/assets/img/operations/operation3.jpeg';
 import womenres from '../../../public/assets/img/operations/women-responsive.png';
 
 import women3 from '../../../public/assets/img/operations/women3.png';
-import React from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ClientMarquee from '@/Components/ClientMarquee';
+import ShareModal from '@/Components/ShareModalDemo';
 
 function OperationsCourse() {
+  const [isShareOpen, setIsShareOpen] = useState(false);
   var settings = {
     dots: true,
     infinite: false,
@@ -187,7 +189,7 @@ function OperationsCourse() {
               </div>
               <div className="flex flex-row space-x-4 justify-center md:justify-start">
                 <PrimaryButton className="px-10 md:w-fit w-1/2">Apply Now For Free</PrimaryButton>
-                <SecondaryButton className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
+                <SecondaryButton onClick={() => { setIsShareOpen(true) }} className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
                   Share&nbsp;
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -204,6 +206,7 @@ function OperationsCourse() {
                     />
                   </svg>
                 </SecondaryButton>
+                <ShareModal isOpen={isShareOpen} shareUrl={window.location} onClose={() => setIsShareOpen(false)} />
               </div>
             </div>
           </div>

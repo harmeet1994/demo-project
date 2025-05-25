@@ -18,6 +18,7 @@ import ClientMarquee from '@/Components/ClientMarquee';
 import { usePage } from '@inertiajs/react';
 import { useState } from 'react';
 import OrderDetailsModal from '@/Components/OrderDetailsModal';
+import ShareModal from '@/Components/ShareModalDemo';
 function AiCourseLandingPage() {
   const [showOrderModal, setShowOrderModal] = useState(false);
   const user = usePage().props.auth.user;
@@ -60,6 +61,8 @@ function AiCourseLandingPage() {
       }
     ]
   };
+
+  const [isShareOpen, setIsShareOpen] = useState(false);
   return (
     <GuestLayout>
       {showOrderModal && <OrderDetailsModal
@@ -133,7 +136,7 @@ function AiCourseLandingPage() {
               <div className="flex flex-row space-x-4 justify-center md:justify-start">
 
                 <PrimaryButton onClick={() => { if (user) { setShowOrderModal(true) } else { window.location.href = '/login' } }} className="px-10 md:w-fit w-1/2">Apply Now</PrimaryButton>
-                <SecondaryButton className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
+                <SecondaryButton onClick={() => { setIsShareOpen(true) }} className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
                   Share&nbsp;
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -150,6 +153,7 @@ function AiCourseLandingPage() {
                     />
                   </svg>
                 </SecondaryButton>
+                <ShareModal isOpen={isShareOpen} shareUrl={window.location} onClose={() => setIsShareOpen(false)} />
               </div>
             </div>
           </div>

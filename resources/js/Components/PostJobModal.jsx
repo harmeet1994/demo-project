@@ -119,7 +119,7 @@ const StepDetails = ({ onNext }) => {
         />
       </div>
 
-      <div>
+      {/* <div>
         <label className="block text-sm font-medium text-gray-700">Expiry Date</label>
         <Input
           type="date"
@@ -128,12 +128,12 @@ const StepDetails = ({ onNext }) => {
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
           min={new Date().toISOString().split('T')[0]}
         />
-      </div>
+      </div> */}
 
       <div className="flex justify-end pt-4">
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="bg-[#FF9500] text-white px-4 py-2 rounded-md hover:bg-[#FF9500] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
           Next Step
         </button>
@@ -203,7 +203,7 @@ const StepDescription = ({ onNext, onBack, formData }) => {
         </button>
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="bg-[#FF9500] text-white px-4 py-2 rounded-md hover:bg-[#FF9500] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
           Next Step
         </button>

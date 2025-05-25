@@ -1,6 +1,7 @@
 import GuestLayout from '@/Layouts/GuestLayout'
 import React, { useEffect, useState } from 'react'
 import banner from '../../../public/assets/img/jobs/bannertop.png';
+import bannerMobile from '../../../public/assets/img/jobs/job-mobile.png';
 import { Search, MapPin, ChevronDown, Briefcase, Bookmark, Filter, ChevronLeft, ChevronRight, BookmarkCheck } from 'lucide-react';
 import axios from 'axios';
 import Loader from '@/Components/Loader';
@@ -8,6 +9,7 @@ import { Snackbar } from '@mui/joy';
 import { usePage } from '@inertiajs/react';
 import { Pagination } from '@mui/material';
 import PostJobButton from '@/Components/PostJobButton';
+import PrimaryButton from '@/Components/PrimaryButton';
 
 
 function Jobs() {
@@ -110,7 +112,7 @@ function Jobs() {
         Please login first.
       </Snackbar>
       <section>
-        <div className='bg-black rounded-b-3xl relative'>
+        <div className='bg-black rounded-b-3xl relative md:block hidden'>
           <img src={banner} alt="" className='w-full object-fill' />
           <div className='top-1/3 absolute left-10'>
             <p className='text-white text-3xl'>Find Your</p>
@@ -162,10 +164,31 @@ function Jobs() {
           </div>
 
         </div>
+        <div className='md:hidden block bg-black text-white rounded-b-3xl'>
+          <img src={bannerMobile} alt="" className='w-full object-fill' />
+          <div className="text-center mt-8">
+            <h4 className='text-lg'>Find Your </h4>
+            <h4 className='text-5xl font-bold'>Dream Job</h4></div>
+          <br />
+          <div className="flex items-center bg-transparent pl-4 py-2 border mx-2 px-2 rounded-full">
+            <div className='flex w-full items-center'>
+              <Search className="text-gray-500 mr-2" size={20} />
+              <input
+                onChange={(e) => setTitle(e.target.value)}
+                type="text"
+                value={title}
+                placeholder="Job Title Or Keyword"
+                className="bg-transparent w-full focus:outline-none text-white"
+              /></div>
+            <button onClick={() => searchJobs()} className=' w-fit whitespace-nowrap bg-[#FF9500] px-4 py-2 rounded-full'>Search Job</button>
+          </div>
+          <br />
+        </div>
+
       </section>
       <section className='py-12'>
         <div className="container mx-auto px-4 py-6 bg-gray-50">
-          <div className="flex items-end mb-4 space-x-6">
+          <div className="items-end mb-4 md:flex hidden space-x-6">
             <div className='w-24'>
               <h1 className="text-2xl font-bold">{total}</h1>
               <p className="text-gray-600">Jobs Found</p>
@@ -185,6 +208,28 @@ function Jobs() {
               </div>
               <PostJobButton />
             </div>
+          </div>
+
+          <div className="items-end mb-4 md:hidden block">
+            <div className="flex justify-between">
+              <div className='w-24'>
+                <h1 className="text-2xl font-bold">{total}</h1>
+                <p className="text-gray-600">Jobs Found</p>
+              </div>
+              <PostJobButton />
+            </div>
+            <div className='flex overflow-x-scroll gap-3 mt-4 pb-2'>
+              {tabs.map(tab => (
+                <button
+                  key={tab}
+                  className={`px-4 py-2 whitespace-nowrap text-sm font-semibold uppercase  rounded-md ${activeTab === tab ? 'bg-black text-white' : 'bg-white text-gray-800 border'}`}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+
           </div>
 
           <div className="border-t border-gray-200 pt-4">

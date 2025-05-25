@@ -53,6 +53,26 @@ Route::post('/initiate-payment', [PaymentController::class, 'initiatePayment']);
 // Course Registration Routes
 Route::post('/course-registration', [CourseRegistrationController::class, 'store']);
 
+// User Details Form Route
+Route::post('/user-details', function (Request $request) {
+  $validated = $request->validate([
+    'email' => 'required|email|max:255',
+    'phone' => 'required|string|max:20',
+    'college' => 'required|string|max:255',
+    'degree' => 'required|string|max:255',
+    'trainingSession' => 'required|string|max:255',
+  ]);
+
+  // Here you would typically save to database
+  // For now, we'll just return success
+
+  return response()->json([
+    'status' => 'success',
+    'message' => 'User details submitted successfully',
+    'data' => $validated
+  ], 201);
+});
+
 // Authentication Routes
 Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);

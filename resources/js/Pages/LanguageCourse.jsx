@@ -18,6 +18,8 @@ import OrderDetailsModal from '@/Components/OrderDetailsModal'
 import { modules } from "../data/modules"
 import PrimaryButton from "@/Components/PrimaryButton";
 import { usePage } from "@inertiajs/react";
+import ShareModalDemo from "@/Components/ShareModalDemo";
+import ShareModal from "@/Components/ShareModalDemo";
 
 function LanguageCourse() {
   const user = usePage().props.auth.user;
@@ -81,6 +83,8 @@ function LanguageCourse() {
       }
     ]
   };
+
+  const [isShareOpen, setIsShareOpen] = useState(false)
   return (
     <GuestLayout>
       {/* Order Details Modal */}
@@ -111,9 +115,10 @@ function LanguageCourse() {
                 <Clock />
                 <p>Classes Starting Soon - Enroll Now</p>
               </div>
+
               <div className="flex flex-row space-x-4 justify-center md:justify-start">
                 <PrimaryButton onClick={() => { if (user) { setShowOrderModal(true) } else { window.location.href = '/login' } }} className="px-10 md:w-fit w-1/2">Apply Now</PrimaryButton>
-                <SecondaryButton className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
+                <SecondaryButton onClick={() => { setIsShareOpen(true) }} className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
                   Share&nbsp;
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -130,6 +135,7 @@ function LanguageCourse() {
                     />
                   </svg>
                 </SecondaryButton>
+                <ShareModal isOpen={isShareOpen} shareUrl={window.location} onClose={() => setIsShareOpen(false)} />
               </div>
             </div>
           </div>

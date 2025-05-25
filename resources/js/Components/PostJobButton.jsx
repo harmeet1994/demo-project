@@ -18,7 +18,7 @@ const PostJobButton = () => {
           }
         }}
       >
-        Post a new job for free
+        Post a new job
       </button>
       <PostJobModal open={open} onClose={() => setOpen(false)} />
     </>
