@@ -11,6 +11,7 @@ import Tabs from '@mui/joy/Tabs';
 import TabList from '@mui/joy/TabList';
 import Tab from '@mui/joy/Tab';
 import TabPanel from '@mui/joy/TabPanel';
+import MobileMenu from "./MobileMenu";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const user = usePage().props.auth.user;
@@ -243,7 +244,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        {/* <div className="md:hidden flex items-center">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-2xl text-gray-700 focus:outline-none"
@@ -256,7 +257,7 @@ export default function Header() {
               </svg>
             }
           </button>
-        </div>
+        </div> */}
 
         {/* Desktop Buttons */}
         {
@@ -266,7 +267,7 @@ export default function Header() {
           </div>}
 
         {
-          user !== null && <div className="hidden md:flex gap-2">
+          user !== null && <div className="flex items-center md:hidden gap-2">
 
             <div className="bg-[#FF9500] h-12 w-12 flex items-center justify-center rounded-full text-xl font-bold">
               {user.name[0]}
@@ -285,49 +286,7 @@ export default function Header() {
       </div>
       <form action="/logout" method="post" id="logoutForm"></form>
       {/* Mobile Navigation Menu */}
-      <div
-        className={`md:hidden bg-white shadow-lg absolute top-full left-0 w-full transition-all duration-300 ${menuOpen ? "block" : "hidden"
-          }`}
-      >
-        <nav className="flex flex-col items-start py-4 space-y-4 p-4">
-          <NavLink href="/" className="hover:text-blue-600">
-            Home
-          </NavLink>
-          <NavLink href="/about-us" className="hover:text-blue-600">
-            About Us
-          </NavLink>
-          <Accordion className="w-full header-accordian">
-            <AccordionSummary>Courses</AccordionSummary>
-            <AccordionDetails>
-              <div className='flex flex-col space-y-4 pl-5 py-4'>
-                <NavLink href="/operations" className="hover:text-blue-600">
-                  Non-tech Courses
-                </NavLink>
-                <NavLink href="/language" className="hover:text-blue-600">
-                  Professional Language Course
-                </NavLink>
-                <NavLink href="/ai-course" className="hover:text-blue-600">
-                  Tech Courses
-                </NavLink>
-              </div>
-            </AccordionDetails>
-          </Accordion>
-          <NavLink href="/blogs" className="hover:text-blue-600">
-            Blogs
-          </NavLink>
-          <NavLink href="/jobs" className="hover:text-blue-600">
-            Jobs
-          </NavLink>
-          <NavLink href="/contact-us" className="hover:text-blue-600">
-            Contact
-          </NavLink>
-          <NavLink href="/login" className="hover:text-blue-600">
-            Login
-          </NavLink>
-
-
-        </nav>
-      </div>
+      <MobileMenu />
     </header >
   );
 }
