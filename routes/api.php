@@ -3,6 +3,8 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\OrganizationController;
+use App\Models\CampusInquiry;
+use App\Models\CourseRegistration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\CourseInquiry;
@@ -65,6 +67,15 @@ Route::post('/user-details', function (Request $request) {
 
   // Here you would typically save to database
   // For now, we'll just return success
+
+  $course = new CampusInquiry();
+  $course->email = $validated['email'];
+  $course->phone = $validated['phone'];
+  $course->college = $validated['college'];
+  $course->degree = $validated['degree'];
+  $course->training_session = $validated['trainingSession'];
+  $course->created_at = now();
+  $course->save();
 
   return response()->json([
     'status' => 'success',

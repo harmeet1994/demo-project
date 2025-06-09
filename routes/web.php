@@ -104,6 +104,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
   Route::get('course-inquiries', [App\Http\Controllers\Admin\CourseInquiryController::class, 'index'])->name('course-inquiries.index');
   Route::get('course-inquiries/{id}', [App\Http\Controllers\Admin\CourseInquiryController::class, 'show'])->name('course-inquiries.show');
 
+  // Course Registration Routes
+  Route::get('course-registrations', [App\Http\Controllers\Admin\CourseRegistrationController::class, 'index'])->name('course-registrations.index');
+  Route::get('course-registrations/{id}', [App\Http\Controllers\Admin\CourseRegistrationController::class, 'show'])->name('course-registrations.show');
+
+  // Campus Inquiry Routes
+  Route::get('campus-inquiries', [App\Http\Controllers\Admin\CampusInquiryController::class, 'index'])->name('campus-inquiries.index');
+  Route::get('campus-inquiries/{id}', [App\Http\Controllers\Admin\CampusInquiryController::class, 'show'])->name('campus-inquiries.show');
+
   // User Management Routes
   Route::get('users', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
   Route::get('users/export', [App\Http\Controllers\Admin\UserController::class, 'export'])->name('users.export');

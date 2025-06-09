@@ -5,7 +5,9 @@ import bannerImg1 from '../../../public/assets/img/campus/1.png';
 import bannerImg2 from '../../../public/assets/img/campus/2.png';
 import PrimaryButton from '@/Components/PrimaryButton';
 import SecondaryButton from '@/Components/SecondaryButton';
+import { message } from 'antd';
 import OrganizationDetailsModal from '@/Components/OrganizationDetailsModal';
+import StudentDetailsModal from '@/Components/StudentDetailsModal';
 import ClientMarquee from '@/Components/ClientMarquee';
 import ShareModal from '@/Components/ShareModalDemo';
 
@@ -53,10 +55,16 @@ function CareerToCampus() {
     }
   ];
   const [showModal, setShowModal] = useState(false);
+  const [showStudentModal, setShowStudentModal] = useState(false);
+  
   const handleSubmit = (formData) => {
     message.success(formData.message)
-
   };
+  
+  const handleStudentSubmit = (formData) => {
+    message.success('Your details have been submitted successfully!')
+  };
+  
   const [isShareOpen, setIsShareOpen] = useState(false);
   const programs = [
     {
@@ -103,6 +111,12 @@ function CareerToCampus() {
         onClose={() => setShowModal(false)}
         onSubmit={handleSubmit}
       />
+      
+      <StudentDetailsModal
+        show={showStudentModal}
+        onClose={() => setShowStudentModal(false)}
+        onSubmit={handleStudentSubmit}
+      />
       <section className="relative bg-[#121212] text-white md:block flex flex-col-reverse pt-10">
         <div className="md:absolute inset-0 z-20 bg-[#121212] bg-opacity-20 bg-blend-overlay p-5 md:p-0">
           <div className="flex h-full px-4 md:px-10 md:items-center">
@@ -115,7 +129,7 @@ function CareerToCampus() {
               </p>
               <p className='text-lg font-bold mb-8'>Empowering Students Through Campus Program</p>
               <div className="flex flex-row space-x-4 justify-center md:justify-start">
-                <PrimaryButton className="px-10 md:w-fit w-1/2 text-lg" onClick={() => setShowModal(true)}>Enroll Now</PrimaryButton>
+                <PrimaryButton className="px-10 md:w-fit w-1/2 text-lg" onClick={() => setShowStudentModal(true)}>Enroll Now</PrimaryButton>
                 <SecondaryButton onClick={() => { setIsShareOpen(true) }} className="text-yellow-600 px-10 md:w-fit w-1/2 bg-yellow-50">
                   Share&nbsp;
                   <svg
