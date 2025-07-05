@@ -34,7 +34,7 @@ function About() {
             <div className="space-y-2"><h3 class="text-center text-xl mt-4 mb-0">Founder's Vision</h3>
               <p className='text-5xl font-bold text-center'>Meet The Team Behind Your Success</p></div>
             <div class="grid md:grid-cols-2 gap-4 mt-16 jutify-center">
-              <div class="px-4">
+              {/* <div class="px-4">
                 <div class="flex flex-col md:flex-row gap-4 bg-gray-100 border rounded-lg border-gray-300 p-5">
                   <div class="md:w-1/3 mb-4 md:mb-0">
                     <img src="../assets/img/about-us/rishabh.png" class="mx-auto" alt="" />
@@ -56,7 +56,7 @@ function About() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div class="px-4">
                 <div class="flex flex-col md:flex-row bg-gray-100 gap-4 border rounded-lg border-gray-300 p-5">

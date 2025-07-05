@@ -26,12 +26,12 @@ function LanguageCourse() {
 
   const [showOrderModal, setShowOrderModal] = useState(false);
   const instructors = [
-    {
-      name: "Rishabh Arora",
-      image: "/assets/img/campus/p1.png",
-      university: "UNIVERSITY OF OXFORD",
-      universityLogo: "/assets/img/language/oxford.png"
-    },
+    // {
+    //   name: "Rishabh Arora",
+    //   image: "/assets/img/campus/p1.png",
+    //   university: "UNIVERSITY OF OXFORD",
+    //   universityLogo: "/assets/img/language/oxford.png"
+    // },
     {
       name: "Charlotte Mccormick",
       image: "/assets/img/campus/p2.png",
